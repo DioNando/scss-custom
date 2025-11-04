@@ -3,342 +3,343 @@
 // ============================================================================
 // Text styling utility classes (font-size, font-weight, text-align, etc.)
 
-@use '../abstracts/variables' as *;
-@use '../abstracts/breakpoints' as *;
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/breakpoints" as *;
 
 // Font Size Utilities
 .text-xs {
-  font-size: map-get($font-sizes, xs);
+    font-size: map.get($font-sizes, xs);
 }
 
 .text-sm {
-  font-size: map-get($font-sizes, sm);
+    font-size: map.get($font-sizes, sm);
 }
 
 .text-base {
-  font-size: map-get($font-sizes, base);
+    font-size: map.get($font-sizes, base);
 }
 
 .text-lg {
-  font-size: map-get($font-sizes, lg);
+    font-size: map.get($font-sizes, lg);
 }
 
 .text-xl {
-  font-size: map-get($font-sizes, xl);
+    font-size: map.get($font-sizes, xl);
 }
 
 .text-2xl {
-  font-size: map-get($font-sizes, 2xl);
+    font-size: map.get($font-sizes, 2xl);
 }
 
 .text-3xl {
-  font-size: map-get($font-sizes, 3xl);
+    font-size: map.get($font-sizes, 3xl);
 }
 
 .text-4xl {
-  font-size: map-get($font-sizes, 4xl);
+    font-size: map.get($font-sizes, 4xl);
 }
 
 .text-5xl {
-  font-size: map-get($font-sizes, 5xl);
+    font-size: map.get($font-sizes, 5xl);
 }
 
 // Font Weight Utilities
 .font-thin {
-  font-weight: map-get($font-weights, thin);
+    font-weight: map.get($font-weights, thin);
 }
 
 .font-extralight {
-  font-weight: map-get($font-weights, extralight);
+    font-weight: map.get($font-weights, extralight);
 }
 
 .font-light {
-  font-weight: map-get($font-weights, light);
+    font-weight: map.get($font-weights, light);
 }
 
 .font-normal {
-  font-weight: map-get($font-weights, normal);
+    font-weight: map.get($font-weights, normal);
 }
 
 .font-medium {
-  font-weight: map-get($font-weights, medium);
+    font-weight: map.get($font-weights, medium);
 }
 
 .font-semibold {
-  font-weight: map-get($font-weights, semibold);
+    font-weight: map.get($font-weights, semibold);
 }
 
 .font-bold {
-  font-weight: map-get($font-weights, bold);
+    font-weight: map.get($font-weights, bold);
 }
 
 .font-extrabold {
-  font-weight: map-get($font-weights, extrabold);
+    font-weight: map.get($font-weights, extrabold);
 }
 
 .font-black {
-  font-weight: map-get($font-weights, black);
+    font-weight: map.get($font-weights, black);
 }
 
 // Text Alignment
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .text-right {
-  text-align: right;
+    text-align: right;
 }
 
 .text-justify {
-  text-align: justify;
+    text-align: justify;
 }
 
 // Text Transform
 .uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .lowercase {
-  text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 .capitalize {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .normal-case {
-  text-transform: none;
+    text-transform: none;
 }
 
 // Text Decoration
 .underline {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .overline {
-  text-decoration: overline;
+    text-decoration: overline;
 }
 
 .line-through {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 .no-underline {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 // Text Style
 .italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 .not-italic {
-  font-style: normal;
+    font-style: normal;
 }
 
 // Letter Spacing
 .tracking-tighter {
-  letter-spacing: -0.05em;
+    letter-spacing: -0.05em;
 }
 
 .tracking-tight {
-  letter-spacing: -0.025em;
+    letter-spacing: -0.025em;
 }
 
 .tracking-normal {
-  letter-spacing: 0;
+    letter-spacing: 0;
 }
 
 .tracking-wide {
-  letter-spacing: 0.025em;
+    letter-spacing: 0.025em;
 }
 
 .tracking-wider {
-  letter-spacing: 0.05em;
+    letter-spacing: 0.05em;
 }
 
 .tracking-widest {
-  letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
 }
 
 // Line Height
 .leading-none {
-  line-height: map-get($line-heights, none);
+    line-height: map.get($line-heights, none);
 }
 
 .leading-tight {
-  line-height: map-get($line-heights, tight);
+    line-height: map.get($line-heights, tight);
 }
 
 .leading-snug {
-  line-height: map-get($line-heights, snug);
+    line-height: map.get($line-heights, snug);
 }
 
 .leading-normal {
-  line-height: map-get($line-heights, normal);
+    line-height: map.get($line-heights, normal);
 }
 
 .leading-relaxed {
-  line-height: map-get($line-heights, relaxed);
+    line-height: map.get($line-heights, relaxed);
 }
 
 .leading-loose {
-  line-height: map-get($line-heights, loose);
+    line-height: map.get($line-heights, loose);
 }
 
 // Text Truncation
 .truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .line-clamp-1 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 
 .line-clamp-2 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .line-clamp-3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 
 .line-clamp-4 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }
 
 // Word Break
 .break-normal {
-  overflow-wrap: normal;
-  word-break: normal;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .break-words {
-  overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .break-all {
-  word-break: break-all;
+    word-break: break-all;
 }
 
 // White Space
 .whitespace-normal {
-  white-space: normal;
+    white-space: normal;
 }
 
 .whitespace-nowrap {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .whitespace-pre {
-  white-space: pre;
+    white-space: pre;
 }
 
 .whitespace-pre-wrap {
-  white-space: pre-wrap;
+    white-space: pre-wrap;
 }
 
 .whitespace-pre-line {
-  white-space: pre-line;
+    white-space: pre-line;
 }
 
 // Text Color (basic utilities)
 .text-current {
-  color: currentColor;
+    color: currentColor;
 }
 
 .text-inherit {
-  color: inherit;
+    color: inherit;
 }
 
 .text-transparent {
-  color: transparent;
+    color: transparent;
 }
 
 // Responsive text alignment
 @include respond(mobile) {
-  .mobile\:text-left {
-    text-align: left;
-  }
+    .mobile\:text-left {
+        text-align: left;
+    }
 
-  .mobile\:text-center {
-    text-align: center;
-  }
+    .mobile\:text-center {
+        text-align: center;
+    }
 
-  .mobile\:text-right {
-    text-align: right;
-  }
+    .mobile\:text-right {
+        text-align: right;
+    }
 
-  .mobile\:text-justify {
-    text-align: justify;
-  }
+    .mobile\:text-justify {
+        text-align: justify;
+    }
 }
 
 @include respond(desktop) {
-  .desktop\:text-left {
-    text-align: left;
-  }
+    .desktop\:text-left {
+        text-align: left;
+    }
 
-  .desktop\:text-center {
-    text-align: center;
-  }
+    .desktop\:text-center {
+        text-align: center;
+    }
 
-  .desktop\:text-right {
-    text-align: right;
-  }
+    .desktop\:text-right {
+        text-align: right;
+    }
 
-  .desktop\:text-justify {
-    text-align: justify;
-  }
+    .desktop\:text-justify {
+        text-align: justify;
+    }
 }
 
 // Responsive font size
 @include respond(mobile) {
-  .mobile\:text-sm {
-    font-size: map-get($font-sizes, sm);
-  }
+    .mobile\:text-sm {
+        font-size: map.get($font-sizes, sm);
+    }
 
-  .mobile\:text-base {
-    font-size: map-get($font-sizes, base);
-  }
+    .mobile\:text-base {
+        font-size: map.get($font-sizes, base);
+    }
 
-  .mobile\:text-lg {
-    font-size: map-get($font-sizes, lg);
-  }
+    .mobile\:text-lg {
+        font-size: map.get($font-sizes, lg);
+    }
 }
 
 @include respond(desktop) {
-  .desktop\:text-base {
-    font-size: map-get($font-sizes, base);
-  }
+    .desktop\:text-base {
+        font-size: map.get($font-sizes, base);
+    }
 
-  .desktop\:text-lg {
-    font-size: map-get($font-sizes, lg);
-  }
+    .desktop\:text-lg {
+        font-size: map.get($font-sizes, lg);
+    }
 
-  .desktop\:text-xl {
-    font-size: map-get($font-sizes, xl);
-  }
+    .desktop\:text-xl {
+        font-size: map.get($font-sizes, xl);
+    }
 
-  .desktop\:text-2xl {
-    font-size: map-get($font-sizes, 2xl);
-  }
+    .desktop\:text-2xl {
+        font-size: map.get($font-sizes, 2xl);
+    }
 }

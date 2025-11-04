@@ -3,16 +3,18 @@
 // =============================================================================
 // Utility functions for value processing and transformations
 
+@use "sass:map";
+
 /// Convert a value to rem if it's a pixel value
 /// @param {Number} $value - The value to convert
 /// @return {Number} - The converted value in rem or original value
 @function to-rem($value) {
-  @if type-of($value) == "number" {
-    @if unit($value) == "px" {
-      @return calc($value / 16px) * 1rem;
+    @if type-of($value) == "number" {
+        @if unit($value) == "px" {
+            @return calc($value / 16px) * 1rem;
+        }
     }
-  }
-  @return $value;
+    @return $value;
 }
 
 /// Get a value from a map with a fallback
@@ -21,15 +23,15 @@
 /// @param {*} $fallback - The fallback value if key not found
 /// @return {*} - The map value or fallback
 @function get-map-value($map, $key, $fallback: null) {
-  @if map-has-key($map, $key) {
-    @return map-get($map, $key);
-  }
-  @return $fallback;
+    @if map.has-key($map, $key) {
+        @return map.get($map, $key);
+    }
+    @return $fallback;
 }
 
 /// Generate a CSS variable name
 /// @param {String} $name - The variable name
 /// @return {String} - The CSS custom property
 @function css-var($name) {
-  @return var(--#{$name});
+    @return var(--#{$name});
 }
