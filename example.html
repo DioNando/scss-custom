@@ -1,427 +1,1935 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCSS Framework - Exemples</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        }
-        .section {
-            margin-bottom: 4rem;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            background-color: #f9fafb;
-        }
-        .section h2 {
-            margin-bottom: 1.5rem;
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: #111827;
-        }
-        .section h3 {
-            margin: 1.5rem 0 1rem 0;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #374151;
-        }
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .demo-item {
-            padding: 1.5rem;
-            background-color: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.5rem;
-        }
-        code {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            background-color: #f3f4f6;
-            border-radius: 0.25rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
-            color: #1f2937;
-        }
-        .code-block {
-            display: block;
-            padding: 1rem;
-            background-color: #1f2937;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-        .code-block code {
-            background-color: transparent;
-            color: #f3f4f6;
-            padding: 0;
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <header class="bg-primary text-white">
-        <div class="max-w-6xl mx-auto px-4 py-6">
-            <h1 class="text-4xl font-bold">SCSS Framework</h1>
-            <p class="text-gray-100 mt-2">Système modulaire et responsive avec Tailwind-like utilities</p>
-        </div>
-    </header>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SCSS Framework - Complete Component Showcase</title>
+        <link rel="stylesheet" href="../css/main.css" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto py-12 px-4">
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    "Helvetica Neue", Arial, sans-serif;
+                background-color: #f9fafb;
+                color: #111827;
+                line-height: 1.6;
+            }
 
-        <!-- Section: Spacing -->
-        <section class="section">
-            <h2>Espacements (Margin & Padding)</h2>
+            /* Header Navigation */
+            header {
+                background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+                color: white;
+                padding: 3rem 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-            <h3>Marges</h3>
-            <div class="demo-grid">
+            header .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                font-weight: 800;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                font-size: 1.125rem;
+                opacity: 0.9;
+            }
+
+            /* Main Container */
+            main {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem 1rem;
+            }
+
+            /* Section Styling */
+            .section {
+                background: white;
+                border-radius: 0.75rem;
+                padding: 2.5rem;
+                margin-bottom: 3rem;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                border-left: 4px solid #2563eb;
+            }
+
+            .section h2 {
+                font-size: 1.875rem;
+                font-weight: 700;
+                color: #111827;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+                border-bottom: 2px solid #e5e7eb;
+            }
+
+            .section h3 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: #374151;
+                margin: 2rem 0 1rem 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .section h3::before {
+                content: "";
+                display: inline-block;
+                width: 4px;
+                height: 1.25rem;
+                background: #2563eb;
+                margin-right: 0.75rem;
+                border-radius: 2px;
+            }
+
+            /* Demo Grid */
+            .demo-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .demo-item {
+                padding: 1.5rem;
+                background-color: #f9fafb;
+                border: 1px solid #e5e7eb;
+                border-radius: 0.5rem;
+                transition: all 0.3s ease;
+            }
+
+            .demo-item:hover {
+                border-color: #2563eb;
+                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+            }
+
+            /* Code Styling */
+            code {
+                display: inline-block;
+                padding: 0.25rem 0.5rem;
+                background-color: #f3f4f6;
+                border-radius: 0.25rem;
+                font-family:
+                    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+                    monospace;
+                font-size: 0.875rem;
+                color: #1f2937;
+            }
+
+            .code-block {
+                display: block;
+                padding: 1rem;
+                background-color: #1f2937;
+                border-radius: 0.5rem;
+                overflow-x: auto;
+                margin: 1rem 0;
+                border: 1px solid #374151;
+            }
+
+            .code-block code {
+                background-color: transparent;
+                color: #f3f4f6;
+                padding: 0;
+                font-size: 0.875rem;
+                line-height: 1.5;
+            }
+
+            /* Badge Styling */
+            .badge {
+                display: inline-block;
+                padding: 0.25rem 0.75rem;
+                background-color: #dbeafe;
+                color: #0c4a6e;
+                border-radius: 9999px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                margin-left: 0.75rem;
+            }
+
+            /* Feature Grid */
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin: 2rem 0;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+                background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+                border: 1px solid #e0f2fe;
+                border-radius: 0.75rem;
+                transition: all 0.3s ease;
+            }
+
+            .feature-card:hover {
+                border-color: #2563eb;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+            }
+
+            .feature-card h4 {
+                font-size: 1.125rem;
+                font-weight: 600;
+                color: #1e40af;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+                color: #64748b;
+                line-height: 1.6;
+            }
+
+            /* Footer */
+            footer {
+                background-color: #1f2937;
+                color: #f3f4f6;
+                padding: 3rem 1rem;
+                margin-top: 4rem;
+                border-top: 1px solid #374151;
+            }
+
+            footer .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+
+            footer h3 {
+                font-size: 1rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            footer a {
+                color: #9ca3af;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            footer a:hover {
+                color: #2563eb;
+            }
+
+            /* Utility Classes for Demo */
+            .bg-example {
+                background-color: #dbeafe;
+                padding: 2rem;
+                border-radius: 0.5rem;
+                text-align: center;
+                font-weight: 500;
+                color: #0c4a6e;
+            }
+
+            .responsive-demo {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+
+            @media (max-width: 1024px) {
+                .responsive-demo {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .responsive-demo {
+                    grid-template-columns: 1fr;
+                }
+
+                header h1 {
+                    font-size: 1.875rem;
+                }
+
+                .demo-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .color-palette {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+                margin: 1.5rem 0;
+            }
+
+            .color-swatch {
+                border-radius: 0.5rem;
+                padding: 2rem 1rem;
+                text-align: center;
+                color: white;
+                font-weight: 600;
+                font-size: 0.875rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .color-swatch-label {
+                margin-top: 0.5rem;
+                font-size: 0.75rem;
+                color: #64748b;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header Navigation -->
+        <header>
+            <div class="container">
+                <h1>🎨 SCSS Framework</h1>
+                <p>
+                    A modular, responsive design system with Tailwind-like
+                    utilities and custom components
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Introduction Section -->
+
+            <section class="section">
+                <h2>Welcome to Your SCSS Framework</h2>
+                <p>
+                    This comprehensive framework provides a solid foundation for
+                    building modern, responsive websites. It includes utility
+                    classes, reusable components, and a powerful SCSS structure
+                    organized following the ITCSS methodology.
+                </p>
+
+                <h3>Key Features <span class="badge">v1.0</span></h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>📦 Modular Architecture</h4>
+                        <p>
+                            Organized into abstracts, base, utilities, and
+                            components for easy maintenance and scalability.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📱 Mobile-First Responsive</h4>
+                        <p>
+                            Built with responsive breakpoints (mobile and
+                            desktop) for seamless adaptation across all devices.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎯 Utility-First Approach</h4>
+                        <p>
+                            Extensive utility classes for common CSS properties,
+                            reducing the need for custom CSS.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🌈 Customizable Design Tokens</h4>
+                        <p>
+                            Easy-to-modify variables for colors, spacing,
+                            typography, and more in the variables file.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>♿ Accessibility First</h4>
+                        <p>
+                            Built-in focus states and accessible color contrasts
+                            for inclusive design.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🚀 Production Ready</h4>
+                        <p>
+                            Fully tested, documented, and optimized for
+                            performance and maintainability.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color System -->
+            <section class="section">
+                <h2>Color System</h2>
+                <p>
+                    A comprehensive color palette designed for consistency and
+                    accessibility across your projects.
+                </p>
+
+                <h3>Primary Colors</h3>
+                <div class="color-palette">
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #2563eb"
+                        >
+                            Primary
+                        </div>
+                        <div class="color-swatch-label">#2563eb</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #64748b"
+                        >
+                            Secondary
+                        </div>
+                        <div class="color-swatch-label">#64748b</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #f59e0b"
+                        >
+                            Accent
+                        </div>
+                        <div class="color-swatch-label">#f59e0b</div>
+                    </div>
+                </div>
+
+                <h3>Semantic Colors</h3>
+                <div class="color-palette">
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #10b981"
+                        >
+                            Success
+                        </div>
+                        <div class="color-swatch-label">#10b981</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #ef4444"
+                        >
+                            Danger
+                        </div>
+                        <div class="color-swatch-label">#ef4444</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #f59e0b"
+                        >
+                            Warning
+                        </div>
+                        <div class="color-swatch-label">#f59e0b</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #3b82f6"
+                        >
+                            Info
+                        </div>
+                        <div class="color-swatch-label">#3b82f6</div>
+                    </div>
+                </div>
+
+                <h3>Neutral Grays</h3>
+                <div class="color-palette">
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #f9fafb; color: #111827"
+                        >
+                            Gray 50
+                        </div>
+                        <div class="color-swatch-label">#f9fafb</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #374151"
+                        >
+                            Gray 700
+                        </div>
+                        <div class="color-swatch-label">#374151</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #1f2937"
+                        >
+                            Gray 800
+                        </div>
+                        <div class="color-swatch-label">#1f2937</div>
+                    </div>
+                    <div>
+                        <div
+                            class="color-swatch"
+                            style="background-color: #111827"
+                        >
+                            Gray 900
+                        </div>
+                        <div class="color-swatch-label">#111827</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typography -->
+            <section class="section">
+                <h2>Typography System</h2>
+                <p>
+                    Consistent and scalable typography built on a modular scale.
+                </p>
+
+                <h3>Heading Sizes</h3>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h1 style="margin-bottom: 0.5rem">Heading 1</h1>
+                        <code>.text-5xl</code>
+                    </div>
+                    <div class="demo-item">
+                        <h2 style="margin-bottom: 0.5rem">Heading 2</h2>
+                        <code>.text-4xl</code>
+                    </div>
+                    <div class="demo-item">
+                        <h3 style="margin-bottom: 0.5rem">Heading 3</h3>
+                        <code>.text-3xl</code>
+                    </div>
+                    <div class="demo-item">
+                        <h4 style="margin-bottom: 0.5rem">Heading 4</h4>
+                        <code>.text-2xl</code>
+                    </div>
+                    <div class="demo-item">
+                        <h5 style="margin-bottom: 0.5rem">Heading 5</h5>
+                        <code>.text-xl</code>
+                    </div>
+                    <div class="demo-item">
+                        <h6 style="margin-bottom: 0.5rem">Heading 6</h6>
+                        <code>.text-lg</code>
+                    </div>
+                </div>
+
+                <h3>Font Weights</h3>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p style="font-weight: 300; margin-bottom: 0.5rem">
+                            Light Text
+                        </p>
+                        <code>.font-light</code>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 400; margin-bottom: 0.5rem">
+                            Normal Text
+                        </p>
+                        <code>.font-normal</code>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem">
+                            Semibold Text
+                        </p>
+                        <code>.font-semibold</code>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem">
+                            Bold Text
+                        </p>
+                        <code>.font-bold</code>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Button Components -->
+            <section class="section">
+                <h2>Button Components</h2>
+                <p>
+                    Pre-styled button variants for different actions and states.
+                </p>
+
+                <h3>Primary Buttons</h3>
+                <div
+                    class="demo-grid"
+                    style="
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(200px, 1fr)
+                        );
+                    "
+                >
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-primary">Primary Button</button>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-primary" disabled>
+                            Disabled
+                        </button>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-primary btn-lg">
+                            Large Button
+                        </button>
+                    </div>
+                </div>
+
+                <h3>Button Variants</h3>
+                <div
+                    class="demo-grid"
+                    style="
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(200px, 1fr)
+                        );
+                    "
+                >
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-secondary">Secondary</button>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-success">Success</button>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-warning">Warning</button>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-info">Info</button>
+                    </div>
+                </div>
+
+                <h3>Outline & Link Buttons</h3>
+                <div
+                    class="demo-grid"
+                    style="
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(200px, 1fr)
+                        );
+                    "
+                >
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-outline-primary">
+                            Outline Primary
+                        </button>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-ghost">Ghost Button</button>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
+                        <button class="btn btn-link">Link Button</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card Components -->
+            <section class="section">
+                <h2>Card Components</h2>
+                <p>
+                    Reusable card layouts for displaying content in organized
+                    containers.
+                </p>
+
+                <h3>Basic Card</h3>
+                <div class="demo-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Card Title</h3>
+                            <p class="card-subtitle">Optional subtitle</p>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                This is a basic card component with header,
+                                body, and footer sections for organizing
+                                content.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn-sm">
+                                Action
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card card-elevated">
+                        <div class="card-header">
+                            <h3 class="card-title">Elevated Card</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                This card has an elevated shadow for more visual
+                                prominence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card card-flat">
+                        <div class="card-header">
+                            <h3 class="card-title">Flat Card</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                This is a flat card without shadow, minimal and
+                                clean design.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forms -->
+            <section class="section">
+                <h2>Form Elements</h2>
+                <p>
+                    Complete form component styling with support for various
+                    input types.
+                </p>
+
+                <div style="max-width: 500px; margin: 2rem auto">
+                    <form>
+                        <div class="form-group">
+                            <label for="name"
+                                >Full Name
+                                <span style="color: #ef4444">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                required
+                                style="
+                                    width: 100%;
+                                    padding: 0.5rem;
+                                    border: 1px solid #d1d5db;
+                                    border-radius: 0.375rem;
+                                    font-size: 1rem;
+                                "
+                            />
+                            <small
+                                style="
+                                    display: block;
+                                    margin-top: 0.25rem;
+                                    color: #6b7280;
+                                "
+                                >Please use your full name.</small
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                style="
+                                    width: 100%;
+                                    padding: 0.5rem;
+                                    border: 1px solid #d1d5db;
+                                    border-radius: 0.375rem;
+                                    font-size: 1rem;
+                                "
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                placeholder="Enter your message..."
+                                style="
+                                    width: 100%;
+                                    padding: 0.5rem;
+                                    border: 1px solid #d1d5db;
+                                    border-radius: 0.375rem;
+                                    font-size: 1rem;
+                                    font-family: inherit;
+                                "
+                            ></textarea>
+                        </div>
+
+                        <div
+                            class="form-group"
+                            style="display: flex; align-items: center"
+                        >
+                            <input
+                                type="checkbox"
+                                id="agree"
+                                name="agree"
+                                style="margin-right: 0.5rem"
+                            />
+                            <label for="agree" style="margin: 0"
+                                >I agree to the terms and conditions</label
+                            >
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            style="width: 100%"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Spacing Utilities -->
+            <section class="section">
+                <h2>Spacing System</h2>
+                <p>Consistent spacing utilities for margins and padding.</p>
+
+                <h3>Margin Utilities</h3>
+                <div class="responsive-demo">
+                    <div class="bg-example">m-2 (0.5rem)</div>
+                    <div class="bg-example">m-4 (1rem)</div>
+                    <div class="bg-example">m-6 (1.5rem)</div>
+                    <div class="bg-example">m-8 (2rem)</div>
+                </div>
+
+                <h3>Padding Utilities</h3>
+                <div class="responsive-demo" style="margin-top: 1.5rem">
+                    <div class="bg-example" style="padding: 0.5rem !important">
+                        p-2
+                    </div>
+                    <div class="bg-example" style="padding: 1rem !important">
+                        p-4
+                    </div>
+                    <div class="bg-example" style="padding: 1.5rem !important">
+                        p-6
+                    </div>
+                    <div class="bg-example" style="padding: 2rem !important">
+                        p-8
+                    </div>
+                </div>
+            </section>
+
+            <!-- Display & Layout -->
+            <section class="section">
+                <h2>Display & Layout Utilities</h2>
+                <p>Utility classes for common layout patterns.</p>
+
+                <h3>Display Property</h3>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div
+                            style="
+                                display: block;
+                                background: #e0e7ff;
+                                padding: 1rem;
+                                border-radius: 0.375rem;
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            Block Display
+                        </div>
+                        <code>.block</code>
+                    </div>
+                    <div class="demo-item">
+                        <div
+                            style="
+                                display: inline-block;
+                                background: #e0e7ff;
+                                padding: 1rem;
+                                border-radius: 0.375rem;
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            Inline Block
+                        </div>
+                        <code>.inline-block</code>
+                    </div>
+                    <div class="demo-item">
+                        <div
+                            style="
+                                display: flex;
+                                gap: 0.5rem;
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            <div
+                                style="
+                                    flex: 1;
+                                    background: #e0e7ff;
+                                    padding: 1rem;
+                                    border-radius: 0.375rem;
+                                "
+                            >
+                                Flex 1
+                            </div>
+                            <div
+                                style="
+                                    flex: 1;
+                                    background: #e0e7ff;
+                                    padding: 1rem;
+                                    border-radius: 0.375rem;
+                                "
+                            >
+                                Flex 2
+                            </div>
+                        </div>
+                        <code>.flex</code>
+                    </div>
+                </div>
+
+                <h3>Grid Layout</h3>
+                <div class="demo-item" style="margin-top: 1.5rem">
+                    <div
+                        style="
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 1rem;
+                            margin-bottom: 1rem;
+                        "
+                    >
+                        <div
+                            style="
+                                background: #e0e7ff;
+                                padding: 2rem;
+                                border-radius: 0.375rem;
+                                text-align: center;
+                                font-weight: 500;
+                            "
+                        >
+                            Column 1
+                        </div>
+                        <div
+                            style="
+                                background: #e0e7ff;
+                                padding: 2rem;
+                                border-radius: 0.375rem;
+                                text-align: center;
+                                font-weight: 500;
+                            "
+                        >
+                            Column 2
+                        </div>
+                        <div
+                            style="
+                                background: #e0e7ff;
+                                padding: 2rem;
+                                border-radius: 0.375rem;
+                                text-align: center;
+                                font-weight: 500;
+                            "
+                        >
+                            Column 3
+                        </div>
+                    </div>
+                    <code>.grid (3 columns)</code>
+                </div>
+            </section>
+
+            <!-- Responsive Design -->
+            <section class="section">
+                <h2>Responsive Design</h2>
+                <p>
+                    The framework includes responsive prefixes for mobile-first
+                    design.
+                </p>
+
+                <h3>Responsive Prefixes</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Base Styles</h4>
+                        <p>
+                            Default styles apply to all screen sizes. Example:
+                            <code>.block</code>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Mobile Breakpoint</h4>
+                        <p>
+                            Applies to screens with max-width: 1199px. Prefix:
+                            <code>mobile:</code>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Desktop Breakpoint</h4>
+                        <p>
+                            Applies to screens with min-width: 1200px. Prefix:
+                            <code>desktop:</code>
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Usage Example</h3>
+                <div class="code-block">
+                    <code
+                        >&lt;div class="flex mobile:block desktop:flex"&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Mobile: block, Desktop:
+                        flex --&gt;<br />
+                        &lt;/div&gt;</code
+                    >
+                </div>
+            </section>
+
+            <!-- Framework Structure -->
+            <section class="section">
+                <h2>Framework Structure</h2>
+                <p>
+                    The framework is organized following the ITCSS (Inverted
+                    Triangle CSS) methodology for optimal scalability.
+                </p>
+
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(250px, 1fr)
+                        );
+                        gap: 1.5rem;
+                        margin-top: 1.5rem;
+                    "
+                >
+                    <div
+                        style="
+                            padding: 1.5rem;
+                            background: linear-gradient(
+                                135deg,
+                                #fff5f7 0%,
+                                #fff9fc 100%
+                            );
+                            border-radius: 0.5rem;
+                            border-left: 4px solid #ec4899;
+                        "
+                    >
+                        <h4 style="color: #be185d; margin-bottom: 0.5rem">
+                            1. Abstracts
+                        </h4>
+                        <p style="font-size: 0.9rem; color: #be185d">
+                            Variables, functions, mixins, and placeholders. No
+                            CSS output.
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            padding: 1.5rem;
+                            background: linear-gradient(
+                                135deg,
+                                #f0fdf4 0%,
+                                #f9fdf5 100%
+                            );
+                            border-radius: 0.5rem;
+                            border-left: 4px solid #16a34a;
+                        "
+                    >
+                        <h4 style="color: #166534; margin-bottom: 0.5rem">
+                            2. Base
+                        </h4>
+                        <p style="font-size: 0.9rem; color: #166534">
+                            Reset, typography, and base element styles.
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            padding: 1.5rem;
+                            background: linear-gradient(
+                                135deg,
+                                #eff6ff 0%,
+                                #f9fcfd 100%
+                            );
+                            border-radius: 0.5rem;
+                            border-left: 4px solid #2563eb;
+                        "
+                    >
+                        <h4 style="color: #1e40af; margin-bottom: 0.5rem">
+                            3. Utilities
+                        </h4>
+                        <p style="font-size: 0.9rem; color: #1e40af">
+                            Single-purpose utility classes for common
+                            properties.
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            padding: 1.5rem;
+                            background: linear-gradient(
+                                135deg,
+                                #fef3c7 0%,
+                                #fffbeb 100%
+                            );
+                            border-radius: 0.5rem;
+                            border-left: 4px solid #f59e0b;
+                        "
+                    >
+                        <h4 style="color: #92400e; margin-bottom: 0.5rem">
+                            4. Components
+                        </h4>
+                        <p style="font-size: 0.9rem; color: #92400e">
+                            Reusable component styles (buttons, cards, forms).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Getting Started -->
+            <section class="section">
+                <h2>Getting Started</h2>
+                <p>Quick steps to start using the framework in your project.</p>
+
+                <h3>Installation</h3>
+                <ol style="margin-left: 2rem; line-height: 2">
+                    <li>
+                        Ensure you have a SCSS compiler set up in your project
+                    </li>
+                    <li>
+                        Import <code>scss/main.scss</code> in your compilation
+                        pipeline
+                    </li>
+                    <li>
+                        The compiled CSS will be available as
+                        <code>css/main.css</code>
+                    </li>
+                    <li>
+                        Link the CSS file in your HTML:
+                        <code
+                            >&lt;link rel="stylesheet"
+                            href="path/to/css/main.css"&gt;</code
+                        >
+                    </li>
+                </ol>
+
+                <h3>Customization</h3>
+                <p>
+                    Modify the design system by editing variables in
+                    <code>scss/abstracts/_variables.scss</code>:
+                </p>
+                <div class="code-block">
+                    <code
+                        >// Colors Map<br />
+                        $colors: (<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;primary: #2563eb,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;secondary: #64748b,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;// ... more colors<br />
+                        );</code
+                    >
+                </div>
+            </section>
+
+            <!-- Real Utility Classes Examples -->
+            <section class="section">
+                <h2>Complete Utility Classes Reference</h2>
+                <p>
+                    Comprehensive examples using all available utility classes
+                    from the SCSS framework.
+                </p>
+
+                <h3>Display & Visibility Classes</h3>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div class="block bg-example" style="background: #e0e7ff">
+                            .block
+                        </div>
+                    </div>
+                    <div class="demo-item">
+                        <div
+                            class="inline bg-example"
+                            style="background: #e0e7ff"
+                        >
+                            .inline
+                        </div>
+                    </div>
+                    <div class="demo-item">
+                        <div
+                            class="inline-block bg-example"
+                            style="background: #e0e7ff"
+                        >
+                            .inline-block
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Flexbox Utilities</h3>
                 <div class="demo-item">
-                    <div class="bg-blue-100 p-4 m-4 text-center">
-                        <code>.m-4</code>
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem">
+                        <div style="flex: 1; background: #dbeafe; padding: 1rem">
+                            flex: 1
+                        </div>
+                        <div style="flex: 2; background: #dbeafe; padding: 1rem">
+                            flex: 2
+                        </div>
+                        <div
+                            style="flex-shrink: 0; background: #dbeafe; padding: 1rem"
+                        >
+                            flex-shrink-0
+                        </div>
                     </div>
+                    <code>.flex .flex-col .gap-4 .justify-between .items-center</code>
                 </div>
+
+                <h3>Grid Utilities</h3>
                 <div class="demo-item">
-                    <div class="bg-blue-200 mx-6 p-4 text-center">
-                        <code>.mx-6</code>
+                    <div
+                        style="
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 1rem;
+                        "
+                    >
+                        <div style="background: #dbeafe; padding: 1rem">1</div>
+                        <div style="background: #dbeafe; padding: 1rem">2</div>
+                        <div style="background: #dbeafe; padding: 1rem">3</div>
+                        <div
+                            style="background: #dbeafe; padding: 1rem; grid-column: span 2"
+                        >
+                            Span 2
+                        </div>
+                        <div style="background: #dbeafe; padding: 1rem">4</div>
                     </div>
+                    <code style="display: block; margin-top: 0.5rem">
+                        .grid .grid-cols-3 .gap-4 .col-span-2
+                    </code>
                 </div>
+
+                <h3>Spacing Classes (Margin)</h3>
                 <div class="demo-item">
-                    <div class="bg-blue-300 p-4 my-2 text-center">
-                        <code>.my-2</code>
+                    <div style="background: #f3f4f6; padding: 1rem">
+                        <div
+                            style="
+                                background: #2563eb;
+                                color: white;
+                                padding: 1rem;
+                                margin: 1rem;
+                            "
+                        >
+                            .m-4 (1rem margin)
+                        </div>
+                        <div
+                            style="
+                                background: #2563eb;
+                                color: white;
+                                padding: 1rem;
+                                margin-left: 2rem;
+                                margin-right: 2rem;
+                            "
+                        >
+                            .mx-6 (2rem horizontal margin)
+                        </div>
+                        <div
+                            style="
+                                background: #2563eb;
+                                color: white;
+                                padding: 1rem;
+                                margin-top: 0.5rem;
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            .my-2 (0.5rem vertical margin)
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <h3>Rembourrages</h3>
-            <div class="demo-grid">
-                <div class="bg-gray-200 p-2 text-center text-sm">
-                    <code>.p-2</code>
-                </div>
-                <div class="bg-gray-200 p-4 text-center">
-                    <code>.p-4</code>
-                </div>
-                <div class="bg-gray-200 p-6 text-center">
-                    <code>.p-6</code>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Display & Layout -->
-        <section class="section">
-            <h2>Display & Layout</h2>
-
-            <h3>Flexbox</h3>
-            <div class="demo-item">
-                <div class="flex justify-between items-center gap-4 mb-4">
-                    <div class="bg-primary text-white px-4 py-2 rounded">Item 1</div>
-                    <div class="bg-primary text-white px-4 py-2 rounded">Item 2</div>
-                    <div class="bg-primary text-white px-4 py-2 rounded">Item 3</div>
-                </div>
-                <code>.flex .justify-between .items-center .gap-4</code>
-            </div>
-
-            <h3>Grid</h3>
-            <div class="demo-item">
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="bg-secondary text-white p-4 rounded text-center">Col 1</div>
-                    <div class="bg-secondary text-white p-4 rounded text-center">Col 2</div>
-                    <div class="bg-secondary text-white p-4 rounded text-center">Col 3</div>
-                </div>
-                <code class="block mt-4">.grid .grid-cols-3 .gap-4</code>
-            </div>
-
-            <h3>Responsive - Mobile & Desktop</h3>
-            <div class="demo-item">
-                <div class="grid mobile:grid-cols-1 desktop:grid-cols-2 gap-4">
-                    <div class="bg-accent text-white p-4 rounded text-center">
-                        1 colonne mobile
+                <h3>Spacing Classes (Padding)</h3>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div style="background: #2563eb; color: white; padding: 0.5rem">
+                            .p-2
+                        </div>
                     </div>
-                    <div class="bg-accent text-white p-4 rounded text-center">
-                        2 colonnes desktop
+                    <div class="demo-item">
+                        <div style="background: #2563eb; color: white; padding: 1rem">
+                            .p-4
+                        </div>
+                    </div>
+                    <div class="demo-item">
+                        <div style="background: #2563eb; color: white; padding: 1.5rem">
+                            .p-6
+                        </div>
+                    </div>
+                    <div class="demo-item">
+                        <div style="background: #2563eb; color: white; padding: 2rem">
+                            .p-8
+                        </div>
                     </div>
                 </div>
-                <code class="block mt-4">.grid .mobile:grid-cols-1 .desktop:grid-cols-2</code>
-            </div>
-        </section>
 
-        <!-- Section: Colors -->
-        <section class="section">
-            <h2>Couleurs</h2>
+                <h3>Text Color Utilities</h3>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p style="color: #2563eb; font-weight: 600">
+                            .text-primary
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="color: #64748b; font-weight: 600">
+                            .text-secondary
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="color: #10b981; font-weight: 600">
+                            .text-success
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="color: #f59e0b; font-weight: 600">
+                            .text-warning
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="color: #ef4444; font-weight: 600">
+                            .text-danger
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="color: #3b82f6; font-weight: 600">
+                            .text-info
+                        </p>
+                    </div>
+                </div>
 
-            <h3>Couleurs de Texte</h3>
-            <div class="demo-grid">
+                <h3>Background Color Utilities</h3>
+                <div class="demo-grid">
+                    <div
+                        class="demo-item"
+                        style="background: #2563eb; color: white; text-align: center"
+                    >
+                        .bg-primary
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="background: #64748b; color: white; text-align: center"
+                    >
+                        .bg-secondary
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="background: #10b981; color: white; text-align: center"
+                    >
+                        .bg-success
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="background: #f59e0b; color: white; text-align: center"
+                    >
+                        .bg-warning
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="background: #ef4444; color: white; text-align: center"
+                    >
+                        .bg-danger
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="background: #3b82f6; color: white; text-align: center"
+                    >
+                        .bg-info
+                    </div>
+                </div>
+
+                <h3>Border Utilities</h3>
+                <div class="demo-grid">
+                    <div
+                        class="demo-item"
+                        style="border: 1px solid #2563eb; text-align: center"
+                    >
+                        .border
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="border: 2px solid #2563eb; text-align: center"
+                    >
+                        .border-2
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="border-top: 4px solid #2563eb; padding: 1rem; text-align: center"
+                    >
+                        .border-t-4
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            border: 2px solid #2563eb;
+                            border-radius: 0.5rem;
+                            text-align: center;
+                        "
+                    >
+                        .border .rounded-md
+                    </div>
+                </div>
+
+                <h3>Font Weight Utilities</h3>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p style="font-weight: 300">
+                            Light
+                            <br />
+                            <code>.font-light</code>
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 400">
+                            Normal
+                            <br />
+                            <code>.font-normal</code>
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 600">
+                            Semibold
+                            <br />
+                            <code>.font-semibold</code>
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 700">
+                            Bold
+                            <br />
+                            <code>.font-bold</code>
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 800">
+                            Extrabold
+                            <br />
+                            <code>.font-extrabold</code>
+                        </p>
+                    </div>
+                    <div class="demo-item">
+                        <p style="font-weight: 900">
+                            Black
+                            <br />
+                            <code>.font-black</code>
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Gap & Spacing Utilities</h3>
                 <div class="demo-item">
-                    <p class="text-primary font-bold">Texte Primaire</p>
-                    <code>.text-primary</code>
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 1.5rem;
+                        "
+                    >
+                        <div style="background: #dbeafe; padding: 1rem; flex: 1; min-width: 120px">
+                            gap-6
+                        </div>
+                        <div style="background: #dbeafe; padding: 1rem; flex: 1; min-width: 120px">
+                            gap-6
+                        </div>
+                        <div style="background: #dbeafe; padding: 1rem; flex: 1; min-width: 120px">
+                            gap-6
+                        </div>
+                    </div>
+                    <code style="display: block; margin-top: 0.5rem">
+                        .flex .gap-6 .flex-wrap
+                    </code>
                 </div>
+
+                <h3>Position & Z-Index Utilities</h3>
                 <div class="demo-item">
-                    <p class="text-success font-bold">Texte Success</p>
-                    <code>.text-success</code>
-                </div>
-                <div class="demo-item">
-                    <p class="text-error font-bold">Texte Error</p>
-                    <code>.text-error</code>
-                </div>
-            </div>
-
-            <h3>Fond</h3>
-            <div class="demo-grid">
-                <div class="bg-primary text-white p-4 rounded text-center">
-                    <code>.bg-primary</code>
-                </div>
-                <div class="bg-success text-white p-4 rounded text-center">
-                    <code>.bg-success</code>
-                </div>
-                <div class="bg-error text-white p-4 rounded text-center">
-                    <code>.bg-error</code>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Typography -->
-        <section class="section">
-            <h2>Typographie</h2>
-
-            <h3>Tailles de Police</h3>
-            <div class="demo-item space-y-4">
-                <p class="text-xs">Texte XS - <code>.text-xs</code></p>
-                <p class="text-sm">Texte SM - <code>.text-sm</code></p>
-                <p class="text-base">Texte BASE - <code>.text-base</code></p>
-                <p class="text-lg">Texte LG - <code>.text-lg</code></p>
-                <p class="text-xl">Texte XL - <code>.text-xl</code></p>
-                <p class="text-2xl">Texte 2XL - <code>.text-2xl</code></p>
-            </div>
-
-            <h3>Poids de Police</h3>
-            <div class="demo-grid">
-                <div class="demo-item">
-                    <p class="font-light">Font Light</p>
-                    <code>.font-light</code>
-                </div>
-                <div class="demo-item">
-                    <p class="font-normal">Font Normal</p>
-                    <code>.font-normal</code>
-                </div>
-                <div class="demo-item">
-                    <p class="font-bold">Font Bold</p>
-                    <code>.font-bold</code>
-                </div>
-                <div class="demo-item">
-                    <p class="font-black">Font Black</p>
-                    <code>.font-black</code>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Buttons -->
-        <section class="section">
-            <h2>Boutons</h2>
-
-            <h3>Variantes</h3>
-            <div class="demo-item flex flex-wrap gap-4">
-                <button class="btn btn-primary">Primaire</button>
-                <button class="btn btn-secondary">Secondaire</button>
-                <button class="btn btn-success">Success</button>
-                <button class="btn btn-error">Error</button>
-                <button class="btn btn-outline-primary">Outline</button>
-                <button class="btn btn-ghost">Ghost</button>
-            </div>
-
-            <h3>Tailles</h3>
-            <div class="demo-item flex flex-wrap gap-4 items-center">
-                <button class="btn btn-xs btn-primary">XS</button>
-                <button class="btn btn-sm btn-primary">SM</button>
-                <button class="btn btn-md btn-primary">MD</button>
-                <button class="btn btn-lg btn-primary">LG</button>
-                <button class="btn btn-xl btn-primary">XL</button>
-            </div>
-
-            <h3>États</h3>
-            <div class="demo-item flex flex-wrap gap-4">
-                <button class="btn btn-primary">Normal</button>
-                <button class="btn btn-primary" disabled>Désactivé</button>
-            </div>
-        </section>
-
-        <!-- Section: Cards -->
-        <section class="section">
-            <h2>Cartes</h2>
-
-            <div class="demo-grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Titre de Carte</h3>
-                        <p class="card-subtitle">Sous-titre</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Ceci est le contenu de la carte. Vous pouvez ajouter du texte, des images, ou d'autres éléments.</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary btn-sm">Action</button>
+                    <div
+                        style="
+                            position: relative;
+                            width: 100%;
+                            height: 200px;
+                            background: #f3f4f6;
+                            border: 2px dashed #d1d5db;
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div
+                            style="
+                                position: absolute;
+                                top: 20px;
+                                right: 20px;
+                                background: #2563eb;
+                                color: white;
+                                padding: 0.5rem 1rem;
+                                border-radius: 0.375rem;
+                                z-index: 10;
+                            "
+                        >
+                            .absolute .top-0 .right-0 .z-10
+                        </div>
+                        <div
+                            style="
+                                position: absolute;
+                                bottom: 20px;
+                                left: 20px;
+                                background: #64748b;
+                                color: white;
+                                padding: 0.5rem 1rem;
+                                border-radius: 0.375rem;
+                                z-index: 20;
+                            "
+                        >
+                            .absolute .bottom-0 .left-0 .z-20
+                        </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Carte Élevée</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Avec shadow et hover effect.</p>
+                <h3>Max Width & Container Utilities</h3>
+                <div
+                    style="
+                        background: #f9fafb;
+                        padding: 2rem;
+                        border: 2px dashed #d1d5db;
+                        border-radius: 0.5rem;
+                    "
+                >
+                    <div
+                        style="
+                            max-width: 600px;
+                            margin: 0 auto;
+                            background: white;
+                            padding: 1.5rem;
+                            border: 1px solid #e5e7eb;
+                            border-radius: 0.5rem;
+                            text-align: center;
+                        "
+                    >
+                        <p style="margin-bottom: 0.5rem">Max width 600px centered</p>
+                        <code>.max-w-2xl .mx-auto</code>
                     </div>
                 </div>
 
-                <div class="card card-flat">
-                    <div class="card-body">
-                        <p class="card-title">Carte Plate</p>
-                        <p class="card-text">Sans ombre.</p>
+                <h3>Overflow Utilities</h3>
+                <div class="demo-grid">
+                    <div
+                        class="demo-item"
+                        style="
+                            height: 150px;
+                            overflow: visible;
+                            background: #f3f4f6;
+                            border: 2px solid #e5e7eb;
+                            padding: 1rem;
+                        "
+                    >
+                        <p style="line-height: 2; margin: 0">
+                            .overflow-visible - Content can overflow
+                        </p>
                     </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            height: 150px;
+                            overflow: hidden;
+                            background: #f3f4f6;
+                            border: 2px solid #e5e7eb;
+                            padding: 1rem;
+                        "
+                    >
+                        <p style="line-height: 2; margin: 0">
+                            .overflow-hidden - Content is clipped
+                        </p>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            height: 150px;
+                            overflow: auto;
+                            background: #f3f4f6;
+                            border: 2px solid #e5e7eb;
+                            padding: 1rem;
+                        "
+                    >
+                        <p style="line-height: 2; margin: 0">
+                            .overflow-auto - Scrollbar when needed Lorem ipsum
+                            dolor sit amet
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Cursor Utilities</h3>
+                <div class="demo-grid">
+                    <div
+                        class="demo-item"
+                        style="cursor: pointer; text-align: center"
+                    >
+                        <p style="margin-bottom: 0.5rem">Hover me</p>
+                        <code>.cursor-pointer</code>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="cursor: not-allowed; text-align: center"
+                    >
+                        <p style="margin-bottom: 0.5rem">Hover me</p>
+                        <code>.cursor-not-allowed</code>
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="cursor: default; text-align: center"
+                    >
+                        <p style="margin-bottom: 0.5rem">Hover me</p>
+                        <code>.cursor-default</code>
+                    </div>
+                </div>
+
+                <h3>Background Attachment Utilities</h3>
+                <div class="demo-grid">
+                    <div
+                        class="demo-item"
+                        style="
+                            background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%232563eb%22 width=%22100%22 height=%22100%22/%3E%3C/svg%3E');
+                            background-attachment: scroll;
+                            height: 100px;
+                            color: white;
+                            padding: 1rem;
+                        "
+                    >
+                        .bg-scroll
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%2364748b%22 width=%22100%22 height=%22100%22/%3E%3C/svg%3E');
+                            background-attachment: fixed;
+                            height: 100px;
+                            color: white;
+                            padding: 1rem;
+                        "
+                    >
+                        .bg-fixed
+                    </div>
+                    <div
+                        class="demo-item"
+                        style="
+                            background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23f59e0b%22 width=%22100%22 height=%22100%22/%3E%3C/svg%3E');
+                            background-attachment: local;
+                            height: 100px;
+                            color: white;
+                            padding: 1rem;
+                        "
+                    >
+                        .bg-local
+                    </div>
+                </div>
+
+                <h3>Background Position Utilities</h3>
+                <div class="demo-grid">
+                    <div
+                        class="demo-item"
+                        style="
+                            background: linear-gradient(45deg, #2563eb 50%, #dbeafe 50%);
+                            background-position: top;
+                            background-size: 20px 20px;
+                            height: 100px;
+                            border-radius: 0.375rem;
+                        "
+                    ></div>
+                    <div
+                        class="demo-item"
+                        style="
+                            background: linear-gradient(45deg, #2563eb 50%, #dbeafe 50%);
+                            background-position: center;
+                            background-size: 20px 20px;
+                            height: 100px;
+                            border-radius: 0.375rem;
+                        "
+                    ></div>
+                    <div
+                        class="demo-item"
+                        style="
+                            background: linear-gradient(45deg, #2563eb 50%, #dbeafe 50%);
+                            background-position: bottom;
+                            background-size: 20px 20px;
+                            height: 100px;
+                            border-radius: 0.375rem;
+                        "
+                    ></div>
+                </div>
+            </section>
+
+            <!-- Real World Example: Product Card -->
+            <section class="section">
+                <h2>Real-World Examples</h2>
+                <p>Complete examples combining multiple utility classes.</p>
+
+                <h3>Product Card</h3>
+                <div style="max-width: 300px; margin: 0 auto">
+                    <div
+                        style="
+                            background: white;
+                            border: 1px solid #e5e7eb;
+                            border-radius: 0.75rem;
+                            overflow: hidden;
+                            box-shadow:
+                                0 1px 3px 0 rgba(0, 0, 0, 0.1),
+                                0 1px 2px 0 rgba(0, 0, 0, 0.06);
+                        "
+                    >
+                        <div
+                            style="
+                                width: 100%;
+                                height: 200px;
+                                background: linear-gradient(
+                                    135deg,
+                                    #2563eb 0%,
+                                    #1e40af 100%
+                                );
+                            "
+                        ></div>
+                        <div style="padding: 1.5rem">
+                            <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem">
+                                Premium Product
+                            </h4>
+                            <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1rem">
+                                High-quality product with amazing features
+                            </p>
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem">
+                                <span
+                                    style="
+                                        background: #dbeafe;
+                                        color: #0c4a6e;
+                                        padding: 0.25rem 0.75rem;
+                                        border-radius: 9999px;
+                                        font-size: 0.75rem;
+                                        font-weight: 600;
+                                    "
+                                >
+                                    Featured
+                                </span>
+                                <span
+                                    style="
+                                        background: #dcfce7;
+                                        color: #166534;
+                                        padding: 0.25rem 0.75rem;
+                                        border-radius: 9999px;
+                                        font-size: 0.75rem;
+                                        font-weight: 600;
+                                    "
+                                >
+                                    In Stock
+                                </span>
+                            </div>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-size: 1.5rem;
+                                        font-weight: 700;
+                                        color: #2563eb;
+                                    "
+                                >
+                                    $99
+                                </span>
+                                <button
+                                    class="btn btn-primary"
+                                    style="padding: 0.5rem 1rem; font-size: 0.875rem"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem">Hero Banner</h3>
+                <div
+                    style="
+                        background: linear-gradient(
+                            135deg,
+                            #2563eb 0%,
+                            #1e40af 100%
+                        );
+                        color: white;
+                        padding: 3rem 1.5rem;
+                        border-radius: 0.75rem;
+                        text-align: center;
+                    "
+                >
+                    <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem">
+                        Welcome to Our Framework
+                    </h2>
+                    <p style="font-size: 1.125rem; opacity: 0.9; margin-bottom: 2rem">
+                        Build beautiful, responsive websites with ease
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center">
+                        <button class="btn btn-primary" style="background: white; color: #2563eb">
+                            Get Started
+                        </button>
+                        <button class="btn btn-primary" style="opacity: 0.8">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem">Feature Grid</h3>
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        gap: 1.5rem;
+                    "
+                >
+                    <div
+                        style="
+                            padding: 1.5rem;
+                            background: #f0f9ff;
+                            border-radius: 0.5rem;
+                            border-left: 4px solid #2563eb;
+                        "
+                    >
+                        <h4 style="color: #1e40af; margin-bottom: 0.5rem; font-weight: 600">
+                            🚀 Fast
+                        </h4>
+                        <p style="color: #64748b; font-size: 0.9rem">
+                            Lightning quick performance and optimized loading
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            padding: 1.5rem;
+                            background: #f0fdf4;
+                            border-radius: 0.5rem;
+                            border-left: 4px solid #10b981;
+                        "
+                    >
+                        <h4 style="color: #166534; margin-bottom: 0.5rem; font-weight: 600">
+                            ✨ Modern
+                        </h4>
+                        <p style="color: #64748b; font-size: 0.9rem">
+                            Latest CSS and design patterns
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            padding: 1.5rem;
+                            background: #fef3c7;
+                            border-radius: 0.5rem;
+                            border-left: 4px solid #f59e0b;
+                        "
+                    >
+                        <h4 style="color: #92400e; margin-bottom: 0.5rem; font-weight: 600">
+                            🎯 Flexible
+                        </h4>
+                        <p style="color: #64748b; font-size: 0.9rem">
+                            Highly customizable for any project
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Border & Radius -->
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div>
+                    <h3>Documentation</h3>
+                    <ul style="list-style: none">
+                        <li><a href="#spacing">Spacing System</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#colors">Colors</a></li>
+                        <li><a href="#components">Components</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul style="list-style: none">
+                        <li><a href="#">SASS Documentation</a></li>
+                        <li><a href="#">ITCSS Methodology</a></li>
+                        <li><a href="#">CSS Best Practices</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Community</h3>
+                    <ul style="list-style: none">
+                        <li><a href="#">GitHub Repository</a></li>
+                        <li><a href="#">Report Issues</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">License</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>About</h3>
+                    <p>
+                        This SCSS framework provides a solid, scalable
+                        foundation for building modern web applications with
+                        consistency and maintainability in mind.
+                    </p>
+                    <p
+                        style="
+                            margin-top: 1rem;
+                            font-size: 0.875rem;
+                            color: #9ca3af;
+                        "
+                    >
+                        © 2024 SCSS Framework. All rights reserved.
+                    </p>
                 </div>
             </div>
-        </section>
-
-        <!-- Section: Forms -->
-        <section class="section">
-            <h2>Formulaires</h2>
-
-            <div class="demo-item">
-                <form class="form max-w-md">
-                    <div class="form-group">
-                        <label for="name" class="form-label required">Nom</label>
-                        <input type="text" id="name" class="form-control" placeholder="Votre nom">
-                        <small class="form-text">Entrez votre nom complet</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label required">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="exemple@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-control" rows="4" placeholder="Votre message..."></textarea>
-                    </div>
-
-                    <div class="form-check">
-                        <input type="checkbox" id="agree" class="form-check-input">
-                        <label for="agree" class="form-check-label">J'accepte les conditions</label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-block mt-4">Envoyer</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Section: Border & Radius -->
-        <section class="section">
-            <h2>Bordures & Radius</h2>
-
-            <div class="demo-grid">
-                <div class="demo-item border-2 border-primary rounded-none text-center">
-                    <code>.rounded-none</code>
-                </div>
-                <div class="demo-item border-2 border-primary rounded-sm text-center">
-                    <code>.rounded-sm</code>
-                </div>
-                <div class="demo-item border-2 border-primary rounded text-center">
-                    <code>.rounded</code>
-                </div>
-                <div class="demo-item border-2 border-primary rounded-lg text-center">
-                    <code>.rounded-lg</code>
-                </div>
-                <div class="demo-item border-2 border-primary rounded-full text-center">
-                    <code>.rounded-full</code>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Position -->
-        <section class="section">
-            <h2>Position</h2>
-
-            <div class="demo-item">
-                <div class="relative h-48 bg-gray-200 rounded">
-                    <div class="absolute top-0 left-0 bg-primary text-white px-2 py-1 rounded text-sm">
-                        top-0 left-0
-                    </div>
-                    <div class="absolute top-0 right-0 bg-secondary text-white px-2 py-1 rounded text-sm">
-                        top-0 right-0
-                    </div>
-                    <div class="absolute bottom-0 left-0 bg-accent text-white px-2 py-1 rounded text-sm">
-                        bottom-0 left-0
-                    </div>
-                    <div class="absolute bottom-0 right-0 bg-success text-white px-2 py-1 rounded text-sm">
-                        bottom-0 right-0
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Sizing -->
-        <section class="section">
-            <h2>Dimensionnement</h2>
-
-            <h3>Largeurs</h3>
-            <div class="space-y-2 demo-item">
-                <div class="w-full bg-primary text-white p-2 rounded">w-full</div>
-                <div class="w-3/4 bg-secondary text-white p-2 rounded">w-3/4</div>
-                <div class="w-1/2 bg-accent text-white p-2 rounded">w-1/2</div>
-                <div class="w-1/4 bg-success text-white p-2 rounded">w-1/4</div>
-            </div>
-
-            <h3>Hauteurs</h3>
-            <div class="demo-item flex gap-2">
-                <div class="h-16 w-16 bg-primary rounded flex items-center justify-center text-white text-sm text-center">
-                    h-16
-                </div>
-                <div class="h-32 w-16 bg-secondary rounded flex items-center justify-center text-white text-sm text-center">
-                    h-32
-                </div>
-                <div class="h-48 w-16 bg-accent rounded flex items-center justify-center text-white text-sm text-center">
-                    h-48
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Opacity & Visibility -->
-        <section class="section">
-            <h2>Opacité & Visibilité</h2>
-
-            <div class="demo-grid">
-                <div class="demo-item opacity-25 bg-primary text-white p-4 text-center rounded">
-                    <code>.opacity-25</code>
-                </div>
-                <div class="demo-item opacity-50 bg-primary text-white p-4 text-center rounded">
-                    <code>.opacity-50</code>
-                </div>
-                <div class="demo-item opacity-75 bg-primary text-white p-4 text-center rounded">
-                    <code>.opacity-75</code>
-                </div>
-                <div class="demo-item opacity-100 bg-primary text-white p-4 text-center rounded">
-                    <code>.opacity-100</code>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white mt-12">
-        <div class="max-w-6xl mx-auto px-4 py-8 text-center">
-            <p>Framework SCSS Modulaire & Responsive</p>
-            <p class="text-gray-400 text-sm mt-2">Créé avec ❤️ pour les projets modernes</p>
-        </div>
-    </footer>
-
-</body>
+        </footer>
+    </body>
 </html>
