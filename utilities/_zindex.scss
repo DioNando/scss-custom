@@ -1,0 +1,123 @@
+// ============================================================================
+// Z-INDEX - Utilities
+// ============================================================================
+// Z-index utility classes for layering and stacking context
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+// Z-index utilities
+.z-hide {
+  z-index: -1;
+}
+
+.z-auto {
+  z-index: auto;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+// Named z-index layers
+.z-dropdown {
+  z-index: 1000;
+}
+
+.z-sticky {
+  z-index: 1020;
+}
+
+.z-fixed {
+  z-index: 1030;
+}
+
+.z-modal-backdrop {
+  z-index: 1040;
+}
+
+.z-modal {
+  z-index: 1050;
+}
+
+.z-popover {
+  z-index: 1060;
+}
+
+.z-tooltip {
+  z-index: 1070;
+}
+
+// Mobile responsive z-index
+@include respond(mobile) {
+  .mobile\:z-auto {
+    z-index: auto;
+  }
+
+  .mobile\:z-0 {
+    z-index: 0;
+  }
+
+  .mobile\:z-10 {
+    z-index: 10;
+  }
+
+  .mobile\:z-20 {
+    z-index: 20;
+  }
+
+  .mobile\:z-50 {
+    z-index: 50;
+  }
+
+  .mobile\:z-modal {
+    z-index: 1050;
+  }
+}
+
+// Desktop responsive z-index
+@include respond(desktop) {
+  .desktop\:z-auto {
+    z-index: auto;
+  }
+
+  .desktop\:z-0 {
+    z-index: 0;
+  }
+
+  .desktop\:z-10 {
+    z-index: 10;
+  }
+
+  .desktop\:z-20 {
+    z-index: 20;
+  }
+
+  .desktop\:z-50 {
+    z-index: 50;
+  }
+
+  .desktop\:z-modal {
+    z-index: 1050;
+  }
+}

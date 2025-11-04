@@ -1,0 +1,279 @@
+// ============================================================================
+// POSITION - Utilities
+// ============================================================================
+// Position property utility classes with responsive variants
+
+@use '../abstracts/breakpoints' as *;
+
+// Position values
+.static {
+  position: static;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+// Positioning offsets
+.top-0 {
+  top: 0;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.top-6 {
+  top: 2rem;
+}
+
+.top-8 {
+  top: 3rem;
+}
+
+.top-auto {
+  top: auto;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.right-1 {
+  right: 0.25rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.right-6 {
+  right: 2rem;
+}
+
+.right-8 {
+  right: 3rem;
+}
+
+.right-auto {
+  right: auto;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.bottom-1 {
+  bottom: 0.25rem;
+}
+
+.bottom-2 {
+  bottom: 0.5rem;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.bottom-6 {
+  bottom: 2rem;
+}
+
+.bottom-8 {
+  bottom: 3rem;
+}
+
+.bottom-auto {
+  bottom: auto;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.left-1 {
+  left: 0.25rem;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
+.left-4 {
+  left: 1rem;
+}
+
+.left-6 {
+  left: 2rem;
+}
+
+.left-8 {
+  left: 3rem;
+}
+
+.left-auto {
+  left: auto;
+}
+
+// Inset (all sides)
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.inset-auto {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+// Mobile responsive positioning
+@include respond(mobile) {
+  .mobile\:static {
+    position: static;
+  }
+
+  .mobile\:relative {
+    position: relative;
+  }
+
+  .mobile\:absolute {
+    position: absolute;
+  }
+
+  .mobile\:fixed {
+    position: fixed;
+  }
+
+  .mobile\:sticky {
+    position: sticky;
+  }
+
+  .mobile\:top-0 {
+    top: 0;
+  }
+
+  .mobile\:top-4 {
+    top: 1rem;
+  }
+
+  .mobile\:right-0 {
+    right: 0;
+  }
+
+  .mobile\:right-4 {
+    right: 1rem;
+  }
+
+  .mobile\:bottom-0 {
+    bottom: 0;
+  }
+
+  .mobile\:bottom-4 {
+    bottom: 1rem;
+  }
+
+  .mobile\:left-0 {
+    left: 0;
+  }
+
+  .mobile\:left-4 {
+    left: 1rem;
+  }
+
+  .mobile\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+// Desktop responsive positioning
+@include respond(desktop) {
+  .desktop\:static {
+    position: static;
+  }
+
+  .desktop\:relative {
+    position: relative;
+  }
+
+  .desktop\:absolute {
+    position: absolute;
+  }
+
+  .desktop\:fixed {
+    position: fixed;
+  }
+
+  .desktop\:sticky {
+    position: sticky;
+  }
+
+  .desktop\:top-0 {
+    top: 0;
+  }
+
+  .desktop\:top-4 {
+    top: 1rem;
+  }
+
+  .desktop\:right-0 {
+    right: 0;
+  }
+
+  .desktop\:right-4 {
+    right: 1rem;
+  }
+
+  .desktop\:bottom-0 {
+    bottom: 0;
+  }
+
+  .desktop\:bottom-4 {
+    bottom: 1rem;
+  }
+
+  .desktop\:left-0 {
+    left: 0;
+  }
+
+  .desktop\:left-4 {
+    left: 1rem;
+  }
+
+  .desktop\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

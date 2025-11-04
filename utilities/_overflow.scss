@@ -1,0 +1,139 @@
+// ============================================================================
+// OVERFLOW - Utilities
+// ============================================================================
+// Overflow property utility classes with responsive variants
+
+@use '../abstracts/breakpoints' as *;
+
+// Overflow
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-clip {
+  overflow: clip;
+}
+
+// Overflow X
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-x-visible {
+  overflow-x: visible;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-x-clip {
+  overflow-x: clip;
+}
+
+// Overflow Y
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-y-visible {
+  overflow-y: visible;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.overflow-y-clip {
+  overflow-y: clip;
+}
+
+// Mobile responsive overflow
+@include respond(mobile) {
+  .mobile\:overflow-auto {
+    overflow: auto;
+  }
+
+  .mobile\:overflow-hidden {
+    overflow: hidden;
+  }
+
+  .mobile\:overflow-visible {
+    overflow: visible;
+  }
+
+  .mobile\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .mobile\:overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .mobile\:overflow-x-hidden {
+    overflow-x: hidden;
+  }
+
+  .mobile\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  .mobile\:overflow-y-hidden {
+    overflow-y: hidden;
+  }
+}
+
+// Desktop responsive overflow
+@include respond(desktop) {
+  .desktop\:overflow-auto {
+    overflow: auto;
+  }
+
+  .desktop\:overflow-hidden {
+    overflow: hidden;
+  }
+
+  .desktop\:overflow-visible {
+    overflow: visible;
+  }
+
+  .desktop\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .desktop\:overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .desktop\:overflow-x-hidden {
+    overflow-x: hidden;
+  }
+
+  .desktop\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  .desktop\:overflow-y-hidden {
+    overflow-y: hidden;
+  }
+}

@@ -1,0 +1,230 @@
+// ============================================================================
+// BASE - Global Styles
+// ============================================================================
+// Global element styles and base layer utilities
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: map-get($font-families, sans);
+  font-size: map-get($font-sizes, base);
+  line-height: map-get($line-heights, normal);
+  color: map-get($colors, gray-900);
+  background-color: map-get($colors, white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: block;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  font-weight: map-get($font-weights, bold);
+  line-height: map-get($line-heights, tight);
+}
+
+h1 {
+  font-size: map-get($font-sizes, 5xl);
+}
+
+h2 {
+  font-size: map-get($font-sizes, 4xl);
+}
+
+h3 {
+  font-size: map-get($font-sizes, 3xl);
+}
+
+h4 {
+  font-size: map-get($font-sizes, 2xl);
+}
+
+h5 {
+  font-size: map-get($font-sizes, xl);
+}
+
+h6 {
+  font-size: map-get($font-sizes, lg);
+}
+
+// Paragraph
+p {
+  margin-bottom: 1rem;
+}
+
+// Lists
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+dl {
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: map-get($font-weights, semibold);
+  margin-top: 0.5rem;
+}
+
+dd {
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+// Links
+a {
+  color: map-get($colors, primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken(map-get($colors, primary), 10%);
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid map-get($colors, primary);
+    outline-offset: 2px;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin-bottom: 1rem;
+}
+
+figcaption {
+  font-size: map-get($font-sizes, sm);
+  color: map-get($colors, gray-600);
+  margin-top: 0.5rem;
+}
+
+// Code
+code,
+pre {
+  font-family: map-get($font-families, mono);
+  background-color: map-get($colors, gray-100);
+  border-radius: map-get($border-radii, base);
+}
+
+code {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875em;
+}
+
+pre {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+
+  code {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+// Blockquote
+blockquote {
+  border-left: 4px solid map-get($colors, primary);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  color: map-get($colors, gray-600);
+  font-style: italic;
+}
+
+// Horizontal Rule
+hr {
+  border: none;
+  border-top: 1px solid map-get($colors, gray-200);
+  margin: 2rem 0;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+thead {
+  background-color: map-get($colors, gray-100);
+}
+
+th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: map-get($font-weights, semibold);
+  border-bottom: 2px solid map-get($colors, gray-200);
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid map-get($colors, gray-200);
+}
+
+tr:hover {
+  background-color: map-get($colors, gray-50);
+}
+
+// Selection color
+::selection {
+  background-color: map-get($colors, primary);
+  color: map-get($colors, white);
+}
+
+::-moz-selection {
+  background-color: map-get($colors, primary);
+  color: map-get($colors, white);
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: map-get($colors, gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: map-get($colors, gray-400);
+  border-radius: map-get($border-radii, full);
+
+  &:hover {
+    background: map-get($colors, gray-500);
+  }
+}

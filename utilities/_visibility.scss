@@ -1,0 +1,206 @@
+// ============================================================================
+// VISIBILITY - Utilities
+// ============================================================================
+// Visibility, display, and opacity utility classes with responsive variants
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+// Visibility
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// Display none
+.hidden {
+  display: none;
+}
+
+// Screen reader only (visually hidden but accessible)
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+// Opacity utilities
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-5 {
+  opacity: 0.05;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-95 {
+  opacity: 0.95;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+// Mobile responsive visibility
+@include respond(mobile) {
+  .mobile\:visible {
+    visibility: visible;
+  }
+
+  .mobile\:invisible {
+    visibility: hidden;
+  }
+
+  .mobile\:hidden {
+    display: none;
+  }
+
+  .mobile\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .mobile\:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .mobile\:opacity-0 {
+    opacity: 0;
+  }
+
+  .mobile\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .mobile\:opacity-100 {
+    opacity: 1;
+  }
+}
+
+// Desktop responsive visibility
+@include respond(desktop) {
+  .desktop\:visible {
+    visibility: visible;
+  }
+
+  .desktop\:invisible {
+    visibility: hidden;
+  }
+
+  .desktop\:hidden {
+    display: none;
+  }
+
+  .desktop\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .desktop\:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .desktop\:opacity-0 {
+    opacity: 0;
+  }
+
+  .desktop\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .desktop\:opacity-100 {
+    opacity: 1;
+  }
+}

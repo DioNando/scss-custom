@@ -1,0 +1,129 @@
+// ============================================================================
+// DISPLAY - Utilities
+// ============================================================================
+// Display property utility classes with responsive variants
+
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// Display utilities
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+.table {
+  display: table;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.none {
+  display: none;
+}
+
+// Responsive display variants
+@include respond(mobile) {
+  .mobile\:block {
+    display: block;
+  }
+
+  .mobile\:inline {
+    display: inline;
+  }
+
+  .mobile\:inline-block {
+    display: inline-block;
+  }
+
+  .mobile\:flex {
+    display: flex;
+  }
+
+  .mobile\:inline-flex {
+    display: inline-flex;
+  }
+
+  .mobile\:grid {
+    display: grid;
+  }
+
+  .mobile\:inline-grid {
+    display: inline-grid;
+  }
+
+  .mobile\:table {
+    display: table;
+  }
+
+  .mobile\:none {
+    display: none;
+  }
+}
+
+@include respond(desktop) {
+  .desktop\:block {
+    display: block;
+  }
+
+  .desktop\:inline {
+    display: inline;
+  }
+
+  .desktop\:inline-block {
+    display: inline-block;
+  }
+
+  .desktop\:flex {
+    display: flex;
+  }
+
+  .desktop\:inline-flex {
+    display: inline-flex;
+  }
+
+  .desktop\:grid {
+    display: grid;
+  }
+
+  .desktop\:inline-grid {
+    display: inline-grid;
+  }
+
+  .desktop\:table {
+    display: table;
+  }
+
+  .desktop\:none {
+    display: none;
+  }
+}

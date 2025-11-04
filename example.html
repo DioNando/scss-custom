@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS Framework - Exemples</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            background-color: #f9fafb;
+        }
+        .section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        .section h3 {
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .demo-item {
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+        }
+        code {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #f3f4f6;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: #1f2937;
+        }
+        .code-block {
+            display: block;
+            padding: 1rem;
+            background-color: #1f2937;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .code-block code {
+            background-color: transparent;
+            color: #f3f4f6;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="bg-primary text-white">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <h1 class="text-4xl font-bold">SCSS Framework</h1>
+            <p class="text-gray-100 mt-2">Système modulaire et responsive avec Tailwind-like utilities</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-12 px-4">
+
+        <!-- Section: Spacing -->
+        <section class="section">
+            <h2>Espacements (Margin & Padding)</h2>
+
+            <h3>Marges</h3>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="bg-blue-100 p-4 m-4 text-center">
+                        <code>.m-4</code>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="bg-blue-200 mx-6 p-4 text-center">
+                        <code>.mx-6</code>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="bg-blue-300 p-4 my-2 text-center">
+                        <code>.my-2</code>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Rembourrages</h3>
+            <div class="demo-grid">
+                <div class="bg-gray-200 p-2 text-center text-sm">
+                    <code>.p-2</code>
+                </div>
+                <div class="bg-gray-200 p-4 text-center">
+                    <code>.p-4</code>
+                </div>
+                <div class="bg-gray-200 p-6 text-center">
+                    <code>.p-6</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Display & Layout -->
+        <section class="section">
+            <h2>Display & Layout</h2>
+
+            <h3>Flexbox</h3>
+            <div class="demo-item">
+                <div class="flex justify-between items-center gap-4 mb-4">
+                    <div class="bg-primary text-white px-4 py-2 rounded">Item 1</div>
+                    <div class="bg-primary text-white px-4 py-2 rounded">Item 2</div>
+                    <div class="bg-primary text-white px-4 py-2 rounded">Item 3</div>
+                </div>
+                <code>.flex .justify-between .items-center .gap-4</code>
+            </div>
+
+            <h3>Grid</h3>
+            <div class="demo-item">
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="bg-secondary text-white p-4 rounded text-center">Col 1</div>
+                    <div class="bg-secondary text-white p-4 rounded text-center">Col 2</div>
+                    <div class="bg-secondary text-white p-4 rounded text-center">Col 3</div>
+                </div>
+                <code class="block mt-4">.grid .grid-cols-3 .gap-4</code>
+            </div>
+
+            <h3>Responsive - Mobile & Desktop</h3>
+            <div class="demo-item">
+                <div class="grid mobile:grid-cols-1 desktop:grid-cols-2 gap-4">
+                    <div class="bg-accent text-white p-4 rounded text-center">
+                        1 colonne mobile
+                    </div>
+                    <div class="bg-accent text-white p-4 rounded text-center">
+                        2 colonnes desktop
+                    </div>
+                </div>
+                <code class="block mt-4">.grid .mobile:grid-cols-1 .desktop:grid-cols-2</code>
+            </div>
+        </section>
+
+        <!-- Section: Colors -->
+        <section class="section">
+            <h2>Couleurs</h2>
+
+            <h3>Couleurs de Texte</h3>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <p class="text-primary font-bold">Texte Primaire</p>
+                    <code>.text-primary</code>
+                </div>
+                <div class="demo-item">
+                    <p class="text-success font-bold">Texte Success</p>
+                    <code>.text-success</code>
+                </div>
+                <div class="demo-item">
+                    <p class="text-error font-bold">Texte Error</p>
+                    <code>.text-error</code>
+                </div>
+            </div>
+
+            <h3>Fond</h3>
+            <div class="demo-grid">
+                <div class="bg-primary text-white p-4 rounded text-center">
+                    <code>.bg-primary</code>
+                </div>
+                <div class="bg-success text-white p-4 rounded text-center">
+                    <code>.bg-success</code>
+                </div>
+                <div class="bg-error text-white p-4 rounded text-center">
+                    <code>.bg-error</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Typography -->
+        <section class="section">
+            <h2>Typographie</h2>
+
+            <h3>Tailles de Police</h3>
+            <div class="demo-item space-y-4">
+                <p class="text-xs">Texte XS - <code>.text-xs</code></p>
+                <p class="text-sm">Texte SM - <code>.text-sm</code></p>
+                <p class="text-base">Texte BASE - <code>.text-base</code></p>
+                <p class="text-lg">Texte LG - <code>.text-lg</code></p>
+                <p class="text-xl">Texte XL - <code>.text-xl</code></p>
+                <p class="text-2xl">Texte 2XL - <code>.text-2xl</code></p>
+            </div>
+
+            <h3>Poids de Police</h3>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <p class="font-light">Font Light</p>
+                    <code>.font-light</code>
+                </div>
+                <div class="demo-item">
+                    <p class="font-normal">Font Normal</p>
+                    <code>.font-normal</code>
+                </div>
+                <div class="demo-item">
+                    <p class="font-bold">Font Bold</p>
+                    <code>.font-bold</code>
+                </div>
+                <div class="demo-item">
+                    <p class="font-black">Font Black</p>
+                    <code>.font-black</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Buttons -->
+        <section class="section">
+            <h2>Boutons</h2>
+
+            <h3>Variantes</h3>
+            <div class="demo-item flex flex-wrap gap-4">
+                <button class="btn btn-primary">Primaire</button>
+                <button class="btn btn-secondary">Secondaire</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-error">Error</button>
+                <button class="btn btn-outline-primary">Outline</button>
+                <button class="btn btn-ghost">Ghost</button>
+            </div>
+
+            <h3>Tailles</h3>
+            <div class="demo-item flex flex-wrap gap-4 items-center">
+                <button class="btn btn-xs btn-primary">XS</button>
+                <button class="btn btn-sm btn-primary">SM</button>
+                <button class="btn btn-md btn-primary">MD</button>
+                <button class="btn btn-lg btn-primary">LG</button>
+                <button class="btn btn-xl btn-primary">XL</button>
+            </div>
+
+            <h3>États</h3>
+            <div class="demo-item flex flex-wrap gap-4">
+                <button class="btn btn-primary">Normal</button>
+                <button class="btn btn-primary" disabled>Désactivé</button>
+            </div>
+        </section>
+
+        <!-- Section: Cards -->
+        <section class="section">
+            <h2>Cartes</h2>
+
+            <div class="demo-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Titre de Carte</h3>
+                        <p class="card-subtitle">Sous-titre</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Ceci est le contenu de la carte. Vous pouvez ajouter du texte, des images, ou d'autres éléments.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm">Action</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Carte Élevée</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Avec shadow et hover effect.</p>
+                    </div>
+                </div>
+
+                <div class="card card-flat">
+                    <div class="card-body">
+                        <p class="card-title">Carte Plate</p>
+                        <p class="card-text">Sans ombre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Forms -->
+        <section class="section">
+            <h2>Formulaires</h2>
+
+            <div class="demo-item">
+                <form class="form max-w-md">
+                    <div class="form-group">
+                        <label for="name" class="form-label required">Nom</label>
+                        <input type="text" id="name" class="form-control" placeholder="Votre nom">
+                        <small class="form-text">Entrez votre nom complet</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label required">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="exemple@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Votre message..."></textarea>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="agree" class="form-check-input">
+                        <label for="agree" class="form-check-label">J'accepte les conditions</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Envoyer</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section: Border & Radius -->
+        <section class="section">
+            <h2>Bordures & Radius</h2>
+
+            <div class="demo-grid">
+                <div class="demo-item border-2 border-primary rounded-none text-center">
+                    <code>.rounded-none</code>
+                </div>
+                <div class="demo-item border-2 border-primary rounded-sm text-center">
+                    <code>.rounded-sm</code>
+                </div>
+                <div class="demo-item border-2 border-primary rounded text-center">
+                    <code>.rounded</code>
+                </div>
+                <div class="demo-item border-2 border-primary rounded-lg text-center">
+                    <code>.rounded-lg</code>
+                </div>
+                <div class="demo-item border-2 border-primary rounded-full text-center">
+                    <code>.rounded-full</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Position -->
+        <section class="section">
+            <h2>Position</h2>
+
+            <div class="demo-item">
+                <div class="relative h-48 bg-gray-200 rounded">
+                    <div class="absolute top-0 left-0 bg-primary text-white px-2 py-1 rounded text-sm">
+                        top-0 left-0
+                    </div>
+                    <div class="absolute top-0 right-0 bg-secondary text-white px-2 py-1 rounded text-sm">
+                        top-0 right-0
+                    </div>
+                    <div class="absolute bottom-0 left-0 bg-accent text-white px-2 py-1 rounded text-sm">
+                        bottom-0 left-0
+                    </div>
+                    <div class="absolute bottom-0 right-0 bg-success text-white px-2 py-1 rounded text-sm">
+                        bottom-0 right-0
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Sizing -->
+        <section class="section">
+            <h2>Dimensionnement</h2>
+
+            <h3>Largeurs</h3>
+            <div class="space-y-2 demo-item">
+                <div class="w-full bg-primary text-white p-2 rounded">w-full</div>
+                <div class="w-3/4 bg-secondary text-white p-2 rounded">w-3/4</div>
+                <div class="w-1/2 bg-accent text-white p-2 rounded">w-1/2</div>
+                <div class="w-1/4 bg-success text-white p-2 rounded">w-1/4</div>
+            </div>
+
+            <h3>Hauteurs</h3>
+            <div class="demo-item flex gap-2">
+                <div class="h-16 w-16 bg-primary rounded flex items-center justify-center text-white text-sm text-center">
+                    h-16
+                </div>
+                <div class="h-32 w-16 bg-secondary rounded flex items-center justify-center text-white text-sm text-center">
+                    h-32
+                </div>
+                <div class="h-48 w-16 bg-accent rounded flex items-center justify-center text-white text-sm text-center">
+                    h-48
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Opacity & Visibility -->
+        <section class="section">
+            <h2>Opacité & Visibilité</h2>
+
+            <div class="demo-grid">
+                <div class="demo-item opacity-25 bg-primary text-white p-4 text-center rounded">
+                    <code>.opacity-25</code>
+                </div>
+                <div class="demo-item opacity-50 bg-primary text-white p-4 text-center rounded">
+                    <code>.opacity-50</code>
+                </div>
+                <div class="demo-item opacity-75 bg-primary text-white p-4 text-center rounded">
+                    <code>.opacity-75</code>
+                </div>
+                <div class="demo-item opacity-100 bg-primary text-white p-4 text-center rounded">
+                    <code>.opacity-100</code>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-8 text-center">
+            <p>Framework SCSS Modulaire & Responsive</p>
+            <p class="text-gray-400 text-sm mt-2">Créé avec ❤️ pour les projets modernes</p>
+        </div>
+    </footer>
+
+</body>
+</html>

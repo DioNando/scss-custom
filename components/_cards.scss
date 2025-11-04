@@ -1,0 +1,173 @@
+// ============================================================================
+// CARDS - Components
+// ============================================================================
+// Card component styles for content containers
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+// Base card
+.card {
+  background-color: map-get($colors, white);
+  border: 1px solid map-get($colors, gray-200);
+  border-radius: map-get($border-radii, lg);
+  padding: map-get($spacings, 6);
+  box-shadow: map-get($shadows, sm);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: map-get($shadows, md);
+  }
+}
+
+// Card with elevated shadow
+.card-elevated {
+  @extend .card;
+  box-shadow: map-get($shadows, md);
+
+  &:hover {
+    box-shadow: map-get($shadows, lg);
+  }
+}
+
+// Card without shadow
+.card-flat {
+  @extend .card;
+  box-shadow: none;
+  border: 1px solid map-get($colors, gray-200);
+}
+
+// Card sections
+.card-header {
+  padding-bottom: map-get($spacings, 4);
+  border-bottom: 1px solid map-get($colors, gray-100);
+  margin-bottom: map-get($spacings, 4);
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+.card-body {
+  padding: map-get($spacings, 4) 0;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.card-footer {
+  padding-top: map-get($spacings, 4);
+  border-top: 1px solid map-get($colors, gray-100);
+  margin-top: map-get($spacings, 4);
+
+  &:first-child {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+// Card titles
+.card-title {
+  font-size: map-get($font-sizes, lg);
+  font-weight: map-get($font-weights, bold);
+  color: map-get($colors, gray-900);
+  margin: 0;
+  margin-bottom: map-get($spacings, 2);
+}
+
+.card-subtitle {
+  font-size: map-get($font-sizes, sm);
+  color: map-get($colors, gray-600);
+  margin: 0;
+  margin-top: map-get($spacings, 1);
+}
+
+// Card text
+.card-text {
+  color: map-get($colors, gray-700);
+  line-height: map-get($line-heights, normal);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Card image
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: map-get($border-radii, lg) map-get($border-radii, lg) 0 0;
+  margin: -map-get($spacings, 6) -map-get($spacings, 6) map-get($spacings, 4) -map-get($spacings, 6);
+
+  &:only-child {
+    margin-bottom: -map-get($spacings, 6);
+    border-radius: map-get($border-radii, lg);
+  }
+}
+
+// Card with image overlay
+.card-image-overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: map-get($spacings, 6);
+  color: map-get($colors, white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+  .card-title,
+  .card-subtitle,
+  .card-text {
+    color: map-get($colors, white);
+  }
+}
+
+// Card link
+.card-link {
+  color: map-get($colors, primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: darken(map-get($colors, primary), 10%);
+    text-decoration: underline;
+  }
+}
+
+// Responsive card
+@include respond(mobile) {
+  .mobile\:card {
+    padding: map-get($spacings, 4);
+  }
+
+  .mobile\:card-header {
+    padding-bottom: map-get($spacings, 3);
+    margin-bottom: map-get($spacings, 3);
+  }
+
+  .mobile\:card-footer {
+    padding-top: map-get($spacings, 3);
+    margin-top: map-get($spacings, 3);
+  }
+}
+
+@include respond(desktop) {
+  .desktop\:card {
+    padding: map-get($spacings, 8);
+  }
+
+  .desktop\:card-header {
+    padding-bottom: map-get($spacings, 6);
+    margin-bottom: map-get($spacings, 6);
+  }
+
+  .desktop\:card-footer {
+    padding-top: map-get($spacings, 6);
+    margin-top: map-get($spacings, 6);
+  }
+}

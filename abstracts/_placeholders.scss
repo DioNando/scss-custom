@@ -1,0 +1,84 @@
+// ============================================================================
+// Placeholders
+// ============================================================================
+// Définit les placeholders réutilisables pour les patterns communs
+
+// Flexbox centering
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flexbox column
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Absolute positioning center
+%absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Clearfix pour les floats
+%clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Truncate text with ellipsis
+%truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Multiple line truncate
+%truncate-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Visually hidden but accessible
+%sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Focus visible outline
+%focus-ring {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+// Aspect ratio box (for images/videos)
+%aspect-ratio {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    float: left;
+  }
+}
+
+// Smooth transitions
+%smooth-transition {
+  transition: all 0.3s ease-in-out;
+}

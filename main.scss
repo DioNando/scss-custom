@@ -1,0 +1,78 @@
+// ============================================================================
+// MAIN SCSS - Entry Point
+// ============================================================================
+// Central file that imports all SCSS modules in the correct order
+// This is the only file that should be compiled to CSS
+
+// ============================================================================
+// 1. ABSTRACTS - Variables, functions, mixins, and placeholders
+// ============================================================================
+@use 'abstracts/variables';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+@use 'abstracts/placeholders';
+@use 'abstracts/breakpoints';
+
+// ============================================================================
+// 2. BASE - Reset, typography, and base element styles
+// ============================================================================
+@use 'base/reset';
+@use 'base/base';
+@use 'base/typography';
+
+// ============================================================================
+// 3. UTILITIES - Single-purpose utility classes for common CSS properties
+// ============================================================================
+// Layout utilities
+@use 'utilities/display';
+@use 'utilities/flex';
+@use 'utilities/grid';
+@use 'utilities/position';
+
+// Spacing utilities
+@use 'utilities/spacing';
+
+// Visual utilities
+@use 'utilities/colors';
+@use 'utilities/background';
+@use 'utilities/border';
+@use 'utilities/sizing';
+@use 'utilities/opacity';
+@use 'utilities/zindex';
+
+// Text utilities
+@use 'utilities/text';
+
+// Interactive utilities
+@use 'utilities/cursor';
+@use 'utilities/overflow';
+@use 'utilities/visibility';
+
+// ============================================================================
+// 4. COMPONENTS - Reusable component styles (buttons, cards, forms, etc.)
+// ============================================================================
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+
+// ============================================================================
+// COMPILATION NOTES
+// ============================================================================
+//
+// This SCSS structure follows the ITCSS (Inverted Triangle CSS) methodology:
+// 1. ABSTRACTS: Generic configuration (lowest specificity)
+// 2. BASE: Element-level defaults
+// 3. UTILITIES: Single-purpose utility classes
+// 4. COMPONENTS: Specific, reusable component styles (highest specificity)
+//
+// FEATURES:
+// - Two responsive breakpoints: mobile (max-width: 1199px) and desktop (min-width: 1200px)
+// - Responsive variants for utility classes using .mobile: and .desktop: prefixes
+// - Modular and maintainable structure for large projects
+// - Customizable through _variables.scss
+// - Tailwind-like utility-first approach with 100% customization
+//
+// USAGE:
+// Compile this file to CSS using your preferred SCSS compiler:
+// sass scss/main.scss css/main.css
+//

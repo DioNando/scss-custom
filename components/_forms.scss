@@ -1,0 +1,376 @@
+// ============================================================================
+// FORMS - Components
+// ============================================================================
+// Form element component styles (inputs, textareas, selects, etc.)
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+// Form group wrapper
+.form-group {
+  margin-bottom: map-get($spacings, 4);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Labels
+label {
+  display: block;
+  margin-bottom: map-get($spacings, 2);
+  font-weight: map-get($font-weights, medium);
+  color: map-get($colors, gray-700);
+  font-size: map-get($font-sizes, sm);
+
+  &.required::after {
+    content: ' *';
+    color: map-get($colors, error);
+  }
+}
+
+// Input base styles
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="search"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: map-get($spacings, 2) map-get($spacings, 3);
+  font-size: map-get($font-sizes, base);
+  font-family: inherit;
+  line-height: map-get($line-heights, normal);
+  color: map-get($colors, gray-900);
+  background-color: map-get($colors, white);
+  border: 1px solid map-get($colors, gray-300);
+  border-radius: map-get($border-radii, base);
+  transition: all 0.2s ease;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: map-get($colors, primary);
+    box-shadow: 0 0 0 3px rgba(map-get($colors, primary), 0.1);
+  }
+
+  &:disabled {
+    background-color: map-get($colors, gray-100);
+    color: map-get($colors, gray-500);
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    color: map-get($colors, gray-400);
+  }
+}
+
+// Textarea specific
+textarea {
+  resize: vertical;
+  min-height: 100px;
+
+  &.resize-none {
+    resize: none;
+  }
+
+  &.resize-vertical {
+    resize: vertical;
+  }
+
+  &.resize-horizontal {
+    resize: horizontal;
+  }
+
+  &.resize-both {
+    resize: both;
+  }
+}
+
+// Select dropdown
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: right map-get($spacings, 3) center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-right: map-get($spacings, 10);
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// Input size variants
+.input-sm {
+  padding: map-get($spacings, 1) map-get($spacings, 2);
+  font-size: map-get($font-sizes, sm);
+}
+
+.input-lg {
+  padding: map-get($spacings, 3) map-get($spacings, 4);
+  font-size: map-get($font-sizes, lg);
+}
+
+// Input state variants
+.input-success {
+  border-color: map-get($colors, success);
+  background-color: rgba(map-get($colors, success), 0.05);
+
+  &:focus {
+    border-color: map-get($colors, success);
+    box-shadow: 0 0 0 3px rgba(map-get($colors, success), 0.1);
+  }
+}
+
+.input-error {
+  border-color: map-get($colors, error);
+  background-color: rgba(map-get($colors, error), 0.05);
+
+  &:focus {
+    border-color: map-get($colors, error);
+    box-shadow: 0 0 0 3px rgba(map-get($colors, error), 0.1);
+  }
+}
+
+.input-warning {
+  border-color: map-get($colors, warning);
+  background-color: rgba(map-get($colors, warning), 0.05);
+
+  &:focus {
+    border-color: map-get($colors, warning);
+    box-shadow: 0 0 0 3px rgba(map-get($colors, warning), 0.1);
+  }
+}
+
+// Input group
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid map-get($colors, gray-300);
+  border-radius: map-get($border-radii, base);
+  background-color: map-get($colors, white);
+
+  &:focus-within {
+    border-color: map-get($colors, primary);
+    box-shadow: 0 0 0 3px rgba(map-get($colors, primary), 0.1);
+  }
+
+  input {
+    border: none;
+    box-shadow: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.input-group-prepend,
+.input-group-append {
+  display: flex;
+  align-items: center;
+  padding: 0 map-get($spacings, 3);
+  color: map-get($colors, gray-500);
+  background-color: map-get($colors, gray-50);
+  font-size: map-get($font-sizes, sm);
+}
+
+.input-group-prepend {
+  border-right: 1px solid map-get($colors, gray-300);
+}
+
+.input-group-append {
+  border-left: 1px solid map-get($colors, gray-300);
+}
+
+// Checkbox and Radio
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: map-get($spacings, 2);
+  cursor: pointer;
+  border: 1px solid map-get($colors, gray-300);
+  appearance: none;
+
+  &:checked {
+    background-color: map-get($colors, primary);
+    border-color: map-get($colors, primary);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(map-get($colors, primary), 0.1);
+  }
+
+  &:disabled {
+    background-color: map-get($colors, gray-100);
+    border-color: map-get($colors, gray-300);
+    cursor: not-allowed;
+  }
+}
+
+input[type="checkbox"] {
+  border-radius: map-get($border-radii, sm);
+
+  &:checked::after {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+
+  &:checked::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: 9px;
+    margin-top: 9px;
+  }
+}
+
+// Checkbox and Radio wrapper
+.checkbox,
+.radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: map-get($spacings, 2);
+  cursor: pointer;
+
+  label {
+    margin-bottom: 0;
+    font-weight: map-get($font-weights, normal);
+    cursor: pointer;
+  }
+}
+
+// Form help text
+.form-text {
+  display: block;
+  margin-top: map-get($spacings, 1);
+  font-size: map-get($font-sizes, sm);
+  color: map-get($colors, gray-500);
+}
+
+.form-error {
+  color: map-get($colors, error);
+  font-weight: map-get($font-weights, medium);
+}
+
+.form-success {
+  color: map-get($colors, success);
+  font-weight: map-get($font-weights, medium);
+}
+
+// Horizontal form layout
+.form-horizontal {
+  .form-group {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: map-get($spacings, 4);
+    align-items: start;
+
+    label {
+      margin-bottom: 0;
+      padding-top: map-get($spacings, 2);
+    }
+  }
+}
+
+// Inline form layout
+.form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($spacings, 3);
+  align-items: center;
+
+  .form-group {
+    margin-bottom: 0;
+    flex: 0 0 auto;
+
+    label {
+      margin-bottom: 0;
+      margin-right: map-get($spacings, 2);
+      display: inline;
+    }
+
+    input,
+    select,
+    textarea {
+      width: auto;
+      display: inline-block;
+    }
+  }
+}
+
+// Fieldset
+fieldset {
+  border: 1px solid map-get($colors, gray-300);
+  border-radius: map-get($border-radii, base);
+  padding: map-get($spacings, 4);
+  margin-bottom: map-get($spacings, 4);
+}
+
+legend {
+  padding: 0 map-get($spacings, 2);
+  font-weight: map-get($font-weights, semibold);
+  color: map-get($colors, gray-900);
+}
+
+// Mobile responsive form
+@include respond(mobile) {
+  .form-horizontal {
+    .form-group {
+      grid-template-columns: 1fr;
+
+      label {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .form-group {
+      width: 100%;
+
+      label {
+        display: block;
+        margin-right: 0;
+        margin-bottom: map-get($spacings, 2);
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}

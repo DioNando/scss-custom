@@ -1,0 +1,16 @@
+// ============================================================================
+// COLORS - Utilities
+// ============================================================================
+// Text color and background color utility classes
+
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// Text colors
+@include color-utility('text', 'color', $colors);
+
+// Background colors
+@include color-utility('bg', 'background-color', $colors);
+
+// Border colors
+@include color-utility('border', 'border-color', $colors);

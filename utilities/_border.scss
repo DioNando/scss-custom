@@ -1,0 +1,237 @@
+// ============================================================================
+// BORDER - Utilities
+// ============================================================================
+// Border width, style, radius, and color utility classes
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+// Border width
+.border {
+  border-width: 1px;
+}
+
+.border-0 {
+  border-width: 0;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.border-8 {
+  border-width: 8px;
+}
+
+// Border sides
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-r {
+  border-right-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-l {
+  border-left-width: 1px;
+}
+
+.border-t-0 {
+  border-top-width: 0;
+}
+
+.border-r-0 {
+  border-right-width: 0;
+}
+
+.border-b-0 {
+  border-bottom-width: 0;
+}
+
+.border-l-0 {
+  border-left-width: 0;
+}
+
+// Border style
+.border-solid {
+  border-style: solid;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.border-dotted {
+  border-style: dotted;
+}
+
+.border-double {
+  border-style: double;
+}
+
+.border-none {
+  border-style: none;
+}
+
+// Border radius
+.rounded-none {
+  border-radius: 0;
+}
+
+.rounded-xs {
+  border-radius: 0.125rem;
+}
+
+.rounded-sm {
+  border-radius: 0.25rem;
+}
+
+.rounded {
+  border-radius: 0.375rem;
+}
+
+.rounded-md {
+  border-radius: 0.5rem;
+}
+
+.rounded-lg {
+  border-radius: 0.75rem;
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.rounded-2xl {
+  border-radius: 1.5rem;
+}
+
+.rounded-3xl {
+  border-radius: 2rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+// Border radius per corner
+.rounded-t {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+
+.rounded-r {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.rounded-b {
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.rounded-l {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.rounded-tl {
+  border-top-left-radius: 0.375rem;
+}
+
+.rounded-tr {
+  border-top-right-radius: 0.375rem;
+}
+
+.rounded-br {
+  border-bottom-right-radius: 0.375rem;
+}
+
+.rounded-bl {
+  border-bottom-left-radius: 0.375rem;
+}
+
+// Border color utilities
+@each $key, $value in $colors {
+  .border-#{$key} {
+    border-color: #{$value};
+  }
+}
+
+// Mobile responsive borders
+@include respond(mobile) {
+  .mobile\:border {
+    border-width: 1px;
+  }
+
+  .mobile\:border-0 {
+    border-width: 0;
+  }
+
+  .mobile\:border-2 {
+    border-width: 2px;
+  }
+
+  .mobile\:rounded {
+    border-radius: 0.375rem;
+  }
+
+  .mobile\:rounded-md {
+    border-radius: 0.5rem;
+  }
+
+  .mobile\:rounded-lg {
+    border-radius: 0.75rem;
+  }
+
+  .mobile\:rounded-none {
+    border-radius: 0;
+  }
+
+  .mobile\:rounded-full {
+    border-radius: 9999px;
+  }
+}
+
+// Desktop responsive borders
+@include respond(desktop) {
+  .desktop\:border {
+    border-width: 1px;
+  }
+
+  .desktop\:border-0 {
+    border-width: 0;
+  }
+
+  .desktop\:border-2 {
+    border-width: 2px;
+  }
+
+  .desktop\:rounded {
+    border-radius: 0.375rem;
+  }
+
+  .desktop\:rounded-md {
+    border-radius: 0.5rem;
+  }
+
+  .desktop\:rounded-lg {
+    border-radius: 0.75rem;
+  }
+
+  .desktop\:rounded-none {
+    border-radius: 0;
+  }
+
+  .desktop\:rounded-full {
+    border-radius: 9999px;
+  }
+}

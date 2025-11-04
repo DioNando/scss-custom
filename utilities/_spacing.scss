@@ -1,0 +1,190 @@
+// ============================================================================
+// SPACING - Utilities
+// ============================================================================
+// Margin and padding utility classes with responsive variants
+
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// Margin utilities
+@include responsive('m', 'margin', $spacings);
+
+// Padding utilities
+@include responsive('p', 'padding', $spacings);
+
+// Margin X-axis (left and right)
+@each $key, $value in $spacings {
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+}
+
+@include respond(mobile) {
+  @each $key, $value in $spacings {
+    .mobile\:mx-#{$key} {
+      margin-left: $value;
+      margin-right: $value;
+    }
+  }
+}
+
+@include respond(desktop) {
+  @each $key, $value in $spacings {
+    .desktop\:mx-#{$key} {
+      margin-left: $value;
+      margin-right: $value;
+    }
+  }
+}
+
+// Margin Y-axis (top and bottom)
+@each $key, $value in $spacings {
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+@include respond(mobile) {
+  @each $key, $value in $spacings {
+    .mobile\:my-#{$key} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+  }
+}
+
+@include respond(desktop) {
+  @each $key, $value in $spacings {
+    .desktop\:my-#{$key} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+  }
+}
+
+// Padding X-axis (left and right)
+@each $key, $value in $spacings {
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+}
+
+@include respond(mobile) {
+  @each $key, $value in $spacings {
+    .mobile\:px-#{$key} {
+      padding-left: $value;
+      padding-right: $value;
+    }
+  }
+}
+
+@include respond(desktop) {
+  @each $key, $value in $spacings {
+    .desktop\:px-#{$key} {
+      padding-left: $value;
+      padding-right: $value;
+    }
+  }
+}
+
+// Padding Y-axis (top and bottom)
+@each $key, $value in $spacings {
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+@include respond(mobile) {
+  @each $key, $value in $spacings {
+    .mobile\:py-#{$key} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+  }
+}
+
+@include respond(desktop) {
+  @each $key, $value in $spacings {
+    .desktop\:py-#{$key} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+  }
+}
+
+// Individual margin directions
+@each $key, $value in $spacings {
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+}
+
+// Individual padding directions
+@each $key, $value in $spacings {
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+}
+
+// Gap utilities (for flexbox and grid)
+@each $key, $value in $spacings {
+  .gap-#{$key} {
+    gap: $value;
+  }
+  .gap-x-#{$key} {
+    column-gap: $value;
+  }
+  .gap-y-#{$key} {
+    row-gap: $value;
+  }
+}
+
+@include respond(mobile) {
+  @each $key, $value in $spacings {
+    .mobile\:gap-#{$key} {
+      gap: $value;
+    }
+    .mobile\:gap-x-#{$key} {
+      column-gap: $value;
+    }
+    .mobile\:gap-y-#{$key} {
+      row-gap: $value;
+    }
+  }
+}
+
+@include respond(desktop) {
+  @each $key, $value in $spacings {
+    .desktop\:gap-#{$key} {
+      gap: $value;
+    }
+    .desktop\:gap-x-#{$key} {
+      column-gap: $value;
+    }
+    .desktop\:gap-y-#{$key} {
+      row-gap: $value;
+    }
+  }
+}

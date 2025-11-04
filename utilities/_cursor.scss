@@ -1,0 +1,173 @@
+// ============================================================================
+// CURSOR - Utilities
+// ============================================================================
+// Cursor style utility classes with responsive variants
+
+@use '../abstracts/breakpoints' as *;
+
+// Cursor values
+.cursor-auto {
+  cursor: auto;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-wait {
+  cursor: wait;
+}
+
+.cursor-text {
+  cursor: text;
+}
+
+.cursor-move {
+  cursor: move;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.cursor-crosshair {
+  cursor: crosshair;
+}
+
+.cursor-help {
+  cursor: help;
+}
+
+.cursor-progress {
+  cursor: progress;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+.cursor-col-resize {
+  cursor: col-resize;
+}
+
+.cursor-row-resize {
+  cursor: row-resize;
+}
+
+.cursor-n-resize {
+  cursor: n-resize;
+}
+
+.cursor-e-resize {
+  cursor: e-resize;
+}
+
+.cursor-s-resize {
+  cursor: s-resize;
+}
+
+.cursor-w-resize {
+  cursor: w-resize;
+}
+
+.cursor-ne-resize {
+  cursor: ne-resize;
+}
+
+.cursor-nw-resize {
+  cursor: nw-resize;
+}
+
+.cursor-se-resize {
+  cursor: se-resize;
+}
+
+.cursor-sw-resize {
+  cursor: sw-resize;
+}
+
+.cursor-ew-resize {
+  cursor: ew-resize;
+}
+
+.cursor-ns-resize {
+  cursor: ns-resize;
+}
+
+.cursor-nesw-resize {
+  cursor: nesw-resize;
+}
+
+.cursor-nwse-resize {
+  cursor: nwse-resize;
+}
+
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.cursor-zoom-out {
+  cursor: zoom-out;
+}
+
+// Mobile responsive cursor
+@include respond(mobile) {
+  .mobile\:cursor-auto {
+    cursor: auto;
+  }
+
+  .mobile\:cursor-pointer {
+    cursor: pointer;
+  }
+
+  .mobile\:cursor-default {
+    cursor: default;
+  }
+
+  .mobile\:cursor-not-allowed {
+    cursor: not-allowed;
+  }
+
+  .mobile\:cursor-wait {
+    cursor: wait;
+  }
+
+  .mobile\:cursor-text {
+    cursor: text;
+  }
+}
+
+// Desktop responsive cursor
+@include respond(desktop) {
+  .desktop\:cursor-auto {
+    cursor: auto;
+  }
+
+  .desktop\:cursor-pointer {
+    cursor: pointer;
+  }
+
+  .desktop\:cursor-default {
+    cursor: default;
+  }
+
+  .desktop\:cursor-not-allowed {
+    cursor: not-allowed;
+  }
+
+  .desktop\:cursor-wait {
+    cursor: wait;
+  }
+
+  .desktop\:cursor-text {
+    cursor: text;
+  }
+}

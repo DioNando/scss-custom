@@ -1,0 +1,141 @@
+// ============================================================
+// MIXINS
+// ============================================================
+// Mixins for generating responsive utility classes with
+// mobile-first and desktop variants
+
+@use 'variables' as *;
+@use 'breakpoints' as *;
+
+// ============================================================
+// Responsive Mixin
+// ============================================================
+// Generates base utility classes and responsive variants
+//
+// @param $class - Class prefix (e.g., 'm' for margin)
+// @param $property - CSS property (e.g., 'margin')
+// @param $values - Map of values to generate (e.g., $spacings)
+
+@mixin responsive($class, $property, $values) {
+  // Generate base classes for all values
+  @each $key, $value in $values {
+    .#{$class}-#{$key} {
+      #{$property}: $value;
+    }
+  }
+
+  // Mobile variants (max-width: 1199px)
+  @include respond(mobile) {
+    @each $key, $value in $values {
+      .mobile\:#{$class}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  // Desktop variants (min-width: 1200px)
+  @include respond(desktop) {
+    @each $key, $value in $values {
+      .desktop\:#{$class}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Additional Utility Mixins
+// ============================================================
+
+// Mixin for generating multiple properties from a single map
+@mixin responsive-property($prefix, $property, $values) {
+  @include responsive($prefix, $property, $values);
+}
+
+// Mixin for generating color utilities
+@mixin color-utility($class, $property, $colors) {
+  @each $key, $value in $colors {
+    .#{$class}-#{$key} {
+      #{$property}: $value;
+    }
+  }
+
+  @include respond(mobile) {
+    @each $key, $value in $colors {
+      .mobile\:#{$class}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  @include respond(desktop) {
+    @each $key, $value in $colors {
+      .desktop\:#{$class}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+// Mixin for flexbox utilities
+@mixin flex-utility($values) {
+  @each $key, $value in $values {
+    .flex-#{$key} {
+      @each $prop, $val in $value {
+        #{$prop}: #{$val};
+      }
+    }
+  }
+
+  @include respond(mobile) {
+    @each $key, $value in $values {
+      .mobile\:flex-#{$key} {
+        @each $prop, $val in $value {
+          #{$prop}: #{$val};
+        }
+      }
+    }
+  }
+
+  @include respond(desktop) {
+    @each $key, $value in $values {
+      .desktop\:flex-#{$key} {
+        @each $prop, $val in $value {
+          #{$prop}: #{$val};
+        }
+      }
+    }
+  }
+}
+
+// Mixin for creating button-like styles
+@mixin button-style($bg-color, $text-color: white, $padding: 0.75rem 1.5rem, $border-radius: 0.375rem) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  border-radius: $border-radius;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Mixin for consistent transitions
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease) {
+  transition: #{$properties} #{$duration} #{$timing};
+}
+
+// Mixin for accessibility focus states
+@mixin focus-ring($color: currentColor, $width: 2px) {
+  &:focus {
+    outline: $width solid $color;
+    outline-offset: 2px;
+  }
+}
